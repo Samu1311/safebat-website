@@ -1,0 +1,21 @@
+@import "./components.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Smooth scrolling for in-page anchors */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global body styles */
+body {
+  @apply bg-surface text-slate-50 antialiased;
+}
+
+/* Link reset-ish */
+a {
+  @apply transition-colors duration-150;
+}

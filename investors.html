@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Investors – SafeBat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Page-specific SEO description here." />
+
+    <!-- Inter font (brand primary) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/svg+xml" href="./public/safebat-logo-icon.svg" />
+  </head>
+  <body class="bg-surface text-slate-50">
+    <!-- HEADER -->
+    <header
+      x-data="nav"
+      class="sticky top-0 z-40 border-b border-white/5 bg-surface/80 backdrop-blur-xl"
+    >
+      <div
+        class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4"
+      >
+        <a
+          href="index.html"
+          class="flex items-center gap-2"
+          data-animate="fade-in"
+        >
+          <div
+            class="flex h-9 w-9 items-center justify-center rounded-2xl bg-batteryYellow text-carbonBlack"
+          >
+            <!-- SafeBat battery-within-shield hint -->
+            <span class="text-xs font-bold">SB</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-sm font-semibold tracking-tight">SafeBat</span>
+            <span class="text-[11px] text-slate-400"
+              >Science-Driven Battery Safety</span
+            >
+          </div>
+        </a>
+
+        <!-- Desktop nav -->
+        <nav class="hidden items-center gap-6 text-sm md:flex">
+          <a href="solutions.html" class="text-slate-300 hover:text-white"
+            >Solutions</a
+          >
+          <a href="products.html" class="text-slate-300 hover:text-white"
+            >Product</a
+          >
+          <a href="about.html" class="text-slate-300 hover:text-white">About</a>
+          <a href="investors.html" class="text-slate-300 hover:text-white"
+            >Investors</a
+          >
+          <a href="contact.html" class="text-slate-300 hover:text-white"
+            >Contact</a
+          >
+          <a
+            href="contact.html#early-access"
+            class="badge-soft bg-batteryYellow text-[11px] font-semibold text-carbonBlack shadow-soft-card hover:shadow-soft-lg"
+          >
+            Join the Waitlist
+          </a>
+        </nav>
+
+        <!-- Mobile button -->
+        <button
+          @click="toggle"
+          class="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 p-2 md:hidden"
+          aria-label="Toggle navigation"
+        >
+          <svg
+            x-show="!open"
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M4 7h16M4 12h16M4 17h12"
+            />
+          </svg>
+          <svg
+            x-show="open"
+            x-cloak
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile nav -->
+      <div
+        x-show="open"
+        x-transition.opacity
+        x-cloak
+        class="border-t border-white/5 bg-surface md:hidden"
+      >
+        <div class="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3 text-sm">
+          <a @click="close" href="solutions.html" class="py-2 text-slate-200"
+            >Solutions</a
+          >
+          <a @click="close" href="products.html" class="py-2 text-slate-200"
+            >Product</a
+          >
+          <a @click="close" href="about.html" class="py-2 text-slate-200"
+            >About</a
+          >
+          <a @click="close" href="investors.html" class="py-2 text-slate-200"
+            >Investors</a
+          >
+          <a @click="close" href="contact.html" class="py-2 text-slate-200"
+            >Contact</a
+          >
+          <a
+            @click="close"
+            href="contact.html#early-access"
+            class="mt-2 inline-flex items-center justify-center rounded-full bg-batteryYellow px-4 py-2 text-[11px] font-semibold text-carbonBlack shadow-soft-card"
+          >
+            Join the Waitlist
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Investor overview -->
+      <section class="mx-auto max-w-6xl px-4 pt-12 md:pt-20" id="top">
+        <p class="section-eyebrow" data-animate="fade-in">Investor overview</p>
+        <h1
+          class="text-2xl font-semibold tracking-tight sm:text-3xl"
+          data-animate="fade-up"
+        >
+          A first-mover in reactive battery leak neutralisation.
+        </h1>
+        <p
+          class="mt-3 max-w-2xl text-sm text-slate-300"
+          data-animate="fade-up"
+          data-delay="0.1"
+        >
+          SafeBat is building a new product category at the intersection of
+          battery safety, household electronics and sustainability.
+        </p>
+      </section>
+
+      <!-- Market & opportunity -->
+      <section class="mx-auto max-w-6xl px-4 py-10" id="opportunity">
+        <div class="max-w-2xl">
+          <p class="section-eyebrow" data-animate="fade-in">
+            Market & opportunity
+          </p>
+          <h2
+            class="text-xl font-semibold tracking-tight sm:text-2xl"
+            data-animate="fade-up"
+          >
+            A household-scale problem with global relevance.
+          </h2>
+          <p
+            class="mt-3 text-sm text-slate-300"
+            data-animate="fade-up"
+            data-delay="0.1"
+          >
+            Billions of AA/AAA batteries are sold yearly for remotes, toys,
+            controllers, flashlights and small appliances. Many devices are
+            damaged by leaks, while leaking batteries contaminate soil and water
+            and pose health risks.
+          </p>
+        </div>
+
+        <div class="mt-8 stat-grid">
+          <div class="stat-card" data-animate="fade-up">
+            <div class="stat-label">Problem</div>
+            <p class="mt-1 text-xs text-slate-300">
+              Leaked electrolyte corrodes terminals and boards, harms health and
+              reduces battery efficiency.
+            </p>
+          </div>
+          <div class="stat-card" data-animate="fade-up" data-delay="0.1">
+            <div class="stat-label">Gap</div>
+            <p class="mt-1 text-xs text-slate-300">
+              Existing consumer products focus on storage and transport. None
+              neutralise leaks inside devices.
+            </p>
+          </div>
+          <div class="stat-card" data-animate="fade-up" data-delay="0.2">
+            <div class="stat-label">Opportunity</div>
+            <p class="mt-1 text-xs text-slate-300">
+              A simple, low-cost accessory that aligns with eco-trends and
+              circular-economy goals.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- USP & moat -->
+      <section class="mx-auto max-w-6xl px-4 py-10" id="usp">
+        <div class="max-w-2xl">
+          <p class="section-eyebrow" data-animate="fade-in">
+            Unique selling proposition
+          </p>
+          <h2
+            class="text-xl font-semibold tracking-tight sm:text-2xl"
+            data-animate="fade-up"
+          >
+            Reactive capsules that neutralise leaks, not just hold batteries.
+          </h2>
+          <p
+            class="mt-3 text-sm text-slate-300"
+            data-animate="fade-up"
+            data-delay="0.1"
+          >
+            Unlike ordinary battery cases, the SafeBat Protector uses a
+            proprietary chemical reaction to neutralise leaked electrolyte
+            inside devices, preventing corrosion and environmental
+            contamination.
+          </p>
+        </div>
+
+        <div class="mt-8 grid gap-5 md:grid-cols-3">
+          <article
+            class="card-surface p-5 text-xs text-slate-300"
+            data-animate="fade-up"
+          >
+            <p class="badge-soft mb-2">Technology</p>
+            <p>
+              Reactive liner neutralises corrosive compounds while remaining
+              safe and eco-friendly.
+            </p>
+          </article>
+          <article
+            class="card-surface p-5 text-xs text-slate-300"
+            data-animate="fade-up"
+            data-delay="0.1"
+          >
+            <p class="badge-soft mb-2">Economics</p>
+            <p>
+              Low manufacturing cost, mass-market price point and strong add-on
+              potential at retail.
+            </p>
+          </article>
+          <article
+            class="card-surface p-5 text-xs text-slate-300"
+            data-animate="fade-up"
+            data-delay="0.2"
+          >
+            <p class="badge-soft mb-2">Moat</p>
+            <p>
+              Patentability of chemistry, first-mover advantage and potential
+              brand equity with early adopters and partners.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Roadmap highlight -->
+      <section class="mx-auto max-w-6xl px-4 py-10" id="roadmap">
+        <div class="max-w-2xl">
+          <p class="section-eyebrow" data-animate="fade-in">Roadmap & focus</p>
+          <h2
+            class="text-xl font-semibold tracking-tight sm:text-2xl"
+            data-animate="fade-up"
+          >
+            From household pilot to platform for safe battery use.
+          </h2>
+        </div>
+
+        <ol class="timeline">
+          <li class="timeline-item" data-animate="fade-up">
+            <div class="mb-1 text-xs text-slate-400">Phase 1</div>
+            <div class="text-sm font-semibold">
+              Prototype validation & early adopters
+            </div>
+            <p class="text-xs text-slate-300">
+              Complete lab testing, refine materials, and run pilots with
+              eco-conscious households and DIY users.
+            </p>
+          </li>
+          <li class="timeline-item" data-animate="fade-up" data-delay="0.1">
+            <div class="mb-1 text-xs text-slate-400">Phase 2</div>
+            <div class="text-sm font-semibold">Retail launch & OEM pilots</div>
+            <p class="text-xs text-slate-300">
+              Enter selected retail channels and explore co-packaging with
+              appliance and toy manufacturers.
+            </p>
+          </li>
+          <li class="timeline-item" data-animate="fade-up" data-delay="0.2">
+            <div class="mb-1 text-xs text-slate-400">Phase 3</div>
+            <div class="text-sm font-semibold">
+              Expanded portfolio & digital layer
+            </div>
+            <p class="text-xs text-slate-300">
+              Add new capsule sizes, multi-battery formats and a smart app layer
+              for monitoring and education.
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Contact for investors -->
+      <section class="mx-auto max-w-6xl px-4 pb-16" id="contact">
+        <div class="card-surface p-6" data-animate="fade-up">
+          <p class="section-eyebrow mb-2">Get in touch</p>
+          <h2 class="text-lg font-semibold tracking-tight sm:text-xl">
+            Interested in supporting science-driven battery safety?
+          </h2>
+          <p class="mt-2 text-xs text-slate-300">
+            We welcome conversations with ESG and sustainability-focused
+            investors who see potential in household-scale protective
+            technologies.
+          </p>
+          <div
+            class="mt-4 flex flex-wrap items-center gap-4 text-xs text-slate-300"
+          >
+            <a
+              href="contact.html#investor-contact"
+              class="inline-flex items-center justify-center rounded-full bg-batteryYellow px-5 py-2.5 text-[11px] font-semibold text-carbonBlack shadow-soft-lg hover:bg-amber-300"
+            >
+              Contact the team
+            </a>
+            <a href="#top" class="pill-link"> Back to top ↑ </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-20 border-top border-white/5 bg-surface-strong">
+      <div
+        class="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-10 md:flex-row md:items-start md:justify-between"
+      >
+        <!-- Brand + summary -->
+        <div class="max-w-sm">
+          <div class="flex items-center gap-2">
+            <div
+              class="flex h-8 w-8 items-center justify-center rounded-2xl bg-batteryYellow text-carbonBlack text-xs font-bold"
+            >
+              SB
+            </div>
+            <span class="text-sm font-semibold">SafeBat</span>
+          </div>
+          <p class="mt-3 text-xs text-slate-400">
+            SafeBat is a battery-safety &amp; sustainability startup that
+            neutralises battery leaks, protects everyday devices and keeps
+            harmful chemicals out of the environment.
+          </p>
+        </div>
+
+        <!-- Link columns -->
+        <div class="grid gap-8 text-xs text-slate-400 sm:grid-cols-3">
+          <div class="space-y-2">
+            <p class="font-semibold text-slate-200">Product</p>
+            <a href="solutions.html" class="block hover:text-slate-100"
+              >Solutions overview</a
+            >
+            <a href="products.html" class="block hover:text-slate-100"
+              >SafeBat Protector</a
+            >
+            <a href="products.html#usage" class="block hover:text-slate-100"
+              >How it’s used</a
+            >
+            <a href="products.html#roadmap" class="block hover:text-slate-100"
+              >Product roadmap</a
+            >
+          </div>
+
+          <div class="space-y-2">
+            <p class="font-semibold text-slate-200">Company</p>
+            <a href="about.html" class="block hover:text-slate-100"
+              >Mission &amp; story</a
+            >
+            <a href="about.html#founders" class="block hover:text-slate-100"
+              >Founders</a
+            >
+            <a href="contact.html" class="block hover:text-slate-100"
+              >Contact</a
+            >
+            <a
+              href="contact.html#early-access"
+              class="block hover:text-slate-100"
+              >Join the waitlist</a
+            >
+          </div>
+
+          <div class="space-y-2">
+            <p class="font-semibold text-slate-200">Investors</p>
+            <a
+              href="investors.html#opportunity"
+              class="block hover:text-slate-100"
+              >Market &amp; opportunity</a
+            >
+            <a href="investors.html#usp" class="block hover:text-slate-100"
+              >Unique proposition</a
+            >
+            <a href="investors.html#roadmap" class="block hover:text-slate-100"
+              >Roadmap</a
+            >
+            <a
+              href="contact.html#investor-contact"
+              class="block hover:text-slate-100"
+              >Investor contact</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="border-t border-white/5 py-4 text-center text-[11px] text-slate-500"
+      >
+        © <span x-text="new Date().getFullYear()"></span> SafeBat.
+        Science-Driven Battery Safety.
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
