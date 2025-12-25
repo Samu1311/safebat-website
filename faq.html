@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <title>FAQ | SafeBat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Frequently asked questions about SafeBat technology, installation, compatibility, and safety."
+    />
+
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/svg+xml" href="/safebat-logo-icon.svg" />
+  </head>
+  <body
+    class="bg-surface text-slate-100 selection:bg-brand-lime selection:text-brand-black"
+  >
+    <!-- NAVIGATION (Standardized) -->
+    <header
+      x-data="nav"
+      class="sticky top-0 z-50 glass-surface border-b border-white/5"
+    >
+      <div class="section-container flex items-center justify-between py-4">
+        <a
+          href="/"
+          class="flex items-center gap-3 transition-transform hover:scale-[1.02]"
+        >
+          <div
+            class="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand-yellow shadow-lg shadow-brand-yellow/20"
+          >
+            <svg
+              class="h-6 w-6 text-brand-black"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
+              <path d="M12 2L3 7v9c0 5 9 6 9 6s9-1 9-6V7l-9-5z" />
+              <path d="M12 8v8M9 12h6" />
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-sm font-bold tracking-tight text-white uppercase"
+              >SafeBat</span
+            >
+            <span class="text-[10px] font-medium tracking-wider text-brand-lime"
+              >PROTECTOR</span
+            >
+          </div>
+        </a>
+
+        <nav class="hidden items-center gap-8 text-[13px] font-medium md:flex">
+          <a
+            href="/solutions"
+            class="text-slate-400 hover:text-brand-lime transition-colors"
+            >Solutions</a
+          >
+          <a
+            href="/technology"
+            class="text-slate-400 hover:text-brand-lime transition-colors"
+            >Technology</a
+          >
+          <a
+            href="/about"
+            class="text-slate-400 hover:text-brand-lime transition-colors"
+            >Our Story</a
+          >
+          <a
+            href="/investors"
+            class="text-slate-400 hover:text-brand-lime transition-colors text-xs border border-white/10 px-3 py-1 rounded-full"
+            >Investors</a
+          >
+          <a
+            href="/contact"
+            class="btn-secondary py-2 px-5 text-xs text-white border-white/20"
+            >Contact Us</a
+          >
+        </nav>
+
+        <button
+          @click="toggle"
+          class="p-2 md:hidden text-slate-300"
+          aria-label="Menu"
+        >
+          <svg
+            x-show="!open"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+          <svg
+            x-show="open"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        x-show="open"
+        x-transition
+        x-cloak
+        class="absolute inset-x-0 top-full bg-surface-strong border-b border-white/5 md:hidden"
+      >
+        <div class="flex flex-col gap-4 p-6 text-lg font-medium">
+          <a @click="close" href="/solutions">Solutions</a>
+          <a @click="close" href="/technology">Technology</a>
+          <a @click="close" href="/about">Our Story</a>
+          <a @click="close" href="/investors">Investors</a>
+          <a @click="close" href="/contact" class="text-brand-lime"
+            >Contact Us</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section-container pt-24 pb-12 text-center">
+        <p class="section-eyebrow" data-animate="fade-in">Support</p>
+        <h1 class="h1-premium mb-6" data-animate="fade-up">
+          Frequently Asked Questions
+        </h1>
+        <p
+          class="text-slate-400 max-w-xl mx-auto"
+          data-animate="fade-up"
+          data-delay="0.1"
+        >
+          Everything you need to know about the SafeBat Protector capsule,
+          compatibility, and safety.
+        </p>
+      </section>
+
+      <section
+        class="section-container pb-24 max-w-4xl"
+        x-data="{ active: null }"
+      >
+        <!-- Category: Product -->
+        <div class="mb-12" data-animate="fade-up">
+          <h2
+            class="text-lg font-bold text-white mb-6 border-b border-white/10 pb-2"
+          >
+            Product & Compatibility
+          </h2>
+          <div class="space-y-4">
+            <!-- Question 1 -->
+            <div
+              class="card-surface p-6 cursor-pointer group"
+              @click="active = (active === 1 ? null : 1)"
+            >
+              <div class="flex justify-between items-center">
+                <h3
+                  class="font-bold text-white group-hover:text-brand-lime transition-colors"
+                >
+                  Does the capsule make the battery too thick?
+                </h3>
+                <span
+                  class="text-slate-500 transform transition-transform"
+                  :class="active === 1 ? 'rotate-180' : ''"
+                  >↓</span
+                >
+              </div>
+              <div
+                x-show="active === 1"
+                x-collapse
+                class="mt-4 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4"
+              >
+                No. The SafeBat Protector is engineered with ultra-thin,
+                high-tensile materials. It is designed to fit into standard AA
+                and AAA battery compartments found in remote controls, toys, and
+                appliances without forcing the springs.
+              </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div
+              class="card-surface p-6 cursor-pointer group"
+              @click="active = (active === 2 ? null : 2)"
+            >
+              <div class="flex justify-between items-center">
+                <h3
+                  class="font-bold text-white group-hover:text-brand-lime transition-colors"
+                >
+                  Is it reusable?
+                </h3>
+                <span
+                  class="text-slate-500 transform transition-transform"
+                  :class="active === 2 ? 'rotate-180' : ''"
+                  >↓</span
+                >
+              </div>
+              <div
+                x-show="active === 2"
+                x-collapse
+                class="mt-4 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4"
+              >
+                If no leak occurs, yes! You can reuse the SafeBat Protector
+                indefinitely with new batteries. If a battery leaks inside the
+                capsule, the reactive liner neutralises the acid and changes
+                colour. In this case, you should dispose of the capsule and the
+                battery safely.
+              </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div
+              class="card-surface p-6 cursor-pointer group"
+              @click="active = (active === 3 ? null : 3)"
+            >
+              <div class="flex justify-between items-center">
+                <h3
+                  class="font-bold text-white group-hover:text-brand-lime transition-colors"
+                >
+                  What battery sizes are supported?
+                </h3>
+                <span
+                  class="text-slate-500 transform transition-transform"
+                  :class="active === 3 ? 'rotate-180' : ''"
+                  >↓</span
+                >
+              </div>
+              <div
+                x-show="active === 3"
+                x-collapse
+                class="mt-4 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4"
+              >
+                We are currently launching with AA and AAA sizes, which cover
+                over 80% of household device needs. We have C, D, and 9V
+                versions in our R&D roadmap.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category: Safety -->
+        <div data-animate="fade-up" data-delay="0.1">
+          <h2
+            class="text-lg font-bold text-white mb-6 border-b border-white/10 pb-2"
+          >
+            Safety & Environment
+          </h2>
+          <div class="space-y-4">
+            <!-- Question 4 -->
+            <div
+              class="card-surface p-6 cursor-pointer group"
+              @click="active = (active === 4 ? null : 4)"
+            >
+              <div class="flex justify-between items-center">
+                <h3
+                  class="font-bold text-white group-hover:text-brand-yellow transition-colors"
+                >
+                  How does the neutralization work?
+                </h3>
+                <span
+                  class="text-slate-500 transform transition-transform"
+                  :class="active === 4 ? 'rotate-180' : ''"
+                  >↓</span
+                >
+              </div>
+              <div
+                x-show="active === 4"
+                x-collapse
+                class="mt-4 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4"
+              >
+                Our proprietary liner contains a dry chemical agent that
+                activates instantly upon contact with alkaline electrolyte
+                (potassium hydroxide). It triggers a safe chemical reaction that
+                lowers the pH to a non-corrosive level and solidifies the
+                liquid.
+              </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div
+              class="card-surface p-6 cursor-pointer group"
+              @click="active = (active === 5 ? null : 5)"
+            >
+              <div class="flex justify-between items-center">
+                <h3
+                  class="font-bold text-white group-hover:text-brand-yellow transition-colors"
+                >
+                  Is the capsule recyclable?
+                </h3>
+                <span
+                  class="text-slate-500 transform transition-transform"
+                  :class="active === 5 ? 'rotate-180' : ''"
+                  >↓</span
+                >
+              </div>
+              <div
+                x-show="active === 5"
+                x-collapse
+                class="mt-4 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4"
+              >
+                Yes. The outer shell is made from 100% recycled high-impact
+                polymer. If the capsule has neutralized a leak, it contains the
+                waste safely, preventing it from leaching into soil if disposed
+                of in standard waste, though we always recommend battery
+                recycling centers.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section-container pb-24 text-center">
+        <p class="text-sm text-slate-400 mb-6">
+          Have a question not listed here?
+        </p>
+        <a href="/contact" class="btn-primary">Contact Support</a>
+      </section>
+    </main>
+
+    <!-- FOOTER (Standardized) -->
+    <footer class="border-t border-white/5 bg-surface-strong py-16">
+      <div class="section-container grid gap-12 md:grid-cols-2 lg:grid-cols-5">
+        <!-- Brand + Summary (Spans 2 columns) -->
+        <div class="col-span-2">
+          <a href="/" class="flex items-center gap-3 mb-6">
+            <div
+              class="h-8 w-8 rounded-xl bg-brand-yellow flex items-center justify-center text-brand-black"
+            >
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L3 7v9c0 5 9 6 9 6s9-1 9-6V7l-9-5z" />
+              </svg>
+            </div>
+            <span class="text-lg font-bold tracking-tight text-white uppercase"
+              >SafeBat</span
+            >
+          </a>
+          <p class="text-xs text-slate-500 max-w-sm leading-relaxed">
+            SafeBat is a battery-safety and sustainability startup. We protect
+            devices, people, and the planet through science-driven chemical
+            neutralisation. Built by engineers, for households.
+          </p>
+        </div>
+
+        <!-- Column: Technology -->
+        <div class="space-y-4">
+          <p class="text-xs font-bold text-white uppercase tracking-widest">
+            Technology
+          </p>
+          <ul class="space-y-2 text-xs text-slate-500">
+            <li>
+              <a
+                href="/solutions"
+                class="hover:text-brand-lime transition-colors"
+                >Solutions</a
+              >
+            </li>
+            <li>
+              <a
+                href="/products"
+                class="hover:text-brand-lime transition-colors"
+                >Protector Capsule</a
+              >
+            </li>
+            <li>
+              <a
+                href="/products#roadmap"
+                class="hover:text-brand-lime transition-colors"
+                >Future Sizes</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column: Company -->
+        <div class="space-y-4">
+          <p class="text-xs font-bold text-white uppercase tracking-widest">
+            Company
+          </p>
+          <ul class="space-y-2 text-xs text-slate-500">
+            <li>
+              <a href="/about" class="hover:text-brand-lime transition-colors"
+                >Mission &amp; Story</a
+              >
+            </li>
+            <li>
+              <a
+                href="/about#founders"
+                class="hover:text-brand-lime transition-colors"
+                >Founders</a
+              >
+            </li>
+            <li>
+              <a href="/contact" class="hover:text-brand-lime transition-colors"
+                >Contact Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="/contact#early-access"
+                class="hover:text-brand-lime transition-colors"
+                >Join Waitlist</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column: Inquiries -->
+        <div class="space-y-4">
+          <p class="text-xs font-bold text-white uppercase tracking-widest">
+            Inquiries
+          </p>
+          <ul class="space-y-2 text-xs text-slate-500">
+            <li>
+              <a
+                href="/investors"
+                class="hover:text-brand-lime transition-colors"
+                >Investor Deck</a
+              >
+            </li>
+            <li>
+              <a href="/faq" class="hover:text-brand-lime transition-colors"
+                >FAQ</a
+              >
+            </li>
+            <li>
+              <a href="/privacy" class="hover:text-brand-lime transition-colors"
+                >Privacy Policy</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="section-container mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4"
+      >
+        <p class="text-[10px] text-slate-600 uppercase tracking-widest">
+          © <span x-text="new Date().getFullYear()"></span> SafeBat.
+          Science-Driven Battery Safety.
+        </p>
+        <div class="flex gap-6">
+          <span
+            class="text-[10px] text-slate-600 uppercase tracking-widest hover:text-white cursor-pointer transition-colors"
+            >Linkedin</span
+          >
+          <span
+            class="text-[10px] text-slate-600 uppercase tracking-widest hover:text-white cursor-pointer transition-colors"
+            >X (Twitter)</span
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

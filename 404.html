@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>404 | SafeBat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="/safebat-logo-icon.svg" />
+  </head>
+  <body class="bg-surface text-slate-100 flex items-center justify-center min-h-screen relative overflow-hidden">
+
+    <!-- Abstract Background -->
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-surface-soft to-surface pointer-events-none"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] bg-brand-yellow/5 rounded-full blur-3xl animate-pulse-slow"></div>
+
+    <div class="relative z-10 text-center p-8">
+      
+      <!-- Animated Icon -->
+      <div class="mb-8 relative mx-auto w-24 h-24 flex items-center justify-center rounded-3xl bg-surface border border-white/10 shadow-2xl">
+         <svg class="h-10 w-10 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+         <!-- Broken overlay -->
+         <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-16 h-0.5 bg-red-500 rotate-45"></div>
+         </div>
+      </div>
+
+      <h1 class="text-6xl font-bold text-white mb-4">404</h1>
+      <p class="text-xl font-medium text-brand-yellow mb-2">Circuit Broken</p>
+      <p class="text-slate-400 max-w-xs mx-auto mb-8 text-sm">
+        The page you are looking for has been disconnected or does not exist in our grid.
+      </p>
+
+      <a href="/" class="btn-primary">Return Home</a>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

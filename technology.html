@@ -4,60 +4,137 @@
     <meta charset="UTF-8" />
     <title>Technology | SafeBat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Inside the SafeBat Protector: The chemistry, engineering, and future roadmap of our battery safety technology." />
+    <meta
+      name="description"
+      content="Inside the SafeBat Protector: The chemistry, engineering, and future roadmap of our battery safety technology."
+    />
 
     <!-- Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="icon" type="image/svg+xml" href="/safebat-logo-icon.svg" />
   </head>
-  <body class="bg-surface text-slate-100 selection:bg-brand-lime selection:text-brand-black">
-
+  <body
+    class="bg-surface text-slate-100 selection:bg-brand-lime selection:text-brand-black"
+  >
     <!-- NAVIGATION (Standardized: "Technology" tab active) -->
-    <header 
-      x-data="nav" 
+    <header
+      x-data="nav"
       class="sticky top-0 z-50 glass-surface border-b border-white/5"
     >
       <div class="section-container flex items-center justify-between py-4">
-        <a href="/" class="flex items-center gap-3 transition-transform hover:scale-[1.02]">
-          <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand-yellow shadow-lg shadow-brand-yellow/20">
-            <svg class="h-6 w-6 text-brand-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <a
+          href="/"
+          class="flex items-center gap-3 transition-transform hover:scale-[1.02]"
+        >
+          <div
+            class="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand-yellow shadow-lg shadow-brand-yellow/20"
+          >
+            <svg
+              class="h-6 w-6 text-brand-black"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
               <path d="M12 2L3 7v9c0 5 9 6 9 6s9-1 9-6V7l-9-5z" />
               <path d="M12 8v8M9 12h6" />
             </svg>
           </div>
           <div class="flex flex-col">
-            <span class="text-sm font-bold tracking-tight text-white uppercase">SafeBat</span>
-            <span class="text-[10px] font-medium tracking-wider text-brand-lime">PROTECTOR</span>
+            <span class="text-sm font-bold tracking-tight text-white uppercase"
+              >SafeBat</span
+            >
+            <span class="text-[10px] font-medium tracking-wider text-brand-lime"
+              >PROTECTOR</span
+            >
           </div>
         </a>
 
         <!-- Desktop Navigation -->
         <nav class="hidden items-center gap-8 text-[13px] font-medium md:flex">
-          <a href="/solutions" class="text-slate-400 hover:text-brand-lime transition-colors">Solutions</a>
-          <a href="/technology" class="text-white hover:text-brand-lime transition-colors">Technology</a>
-          <a href="/about" class="text-slate-400 hover:text-brand-lime transition-colors">Our Story</a>
-          <a href="/investors" class="text-slate-400 hover:text-brand-lime transition-colors text-xs border border-white/10 px-3 py-1 rounded-full">Investors</a>
-          <a href="/contact" class="btn-primary py-2 px-5 text-xs">Join Waitlist</a>
+          <a
+            href="/solutions"
+            class="text-slate-400 hover:text-brand-lime transition-colors"
+            >Solutions</a
+          >
+          <a
+            href="/technology"
+            class="text-white hover:text-brand-lime transition-colors"
+            >Technology</a
+          >
+          <a
+            href="/about"
+            class="text-slate-400 hover:text-brand-lime transition-colors"
+            >Our Story</a
+          >
+          <a
+            href="/investors"
+            class="text-slate-400 hover:text-brand-lime transition-colors text-xs border border-white/10 px-3 py-1 rounded-full"
+            >Investors</a
+          >
+          <a href="/contact" class="btn-primary py-2 px-5 text-xs"
+            >Join Waitlist</a
+          >
         </nav>
 
         <!-- Mobile Toggle -->
-        <button @click="toggle" class="p-2 md:hidden text-slate-300" aria-label="Menu">
-          <svg x-show="!open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-          <svg x-show="open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        <button
+          @click="toggle"
+          class="p-2 md:hidden text-slate-300"
+          aria-label="Menu"
+        >
+          <svg
+            x-show="!open"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+          <svg
+            x-show="open"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
         </button>
       </div>
 
       <!-- Mobile Menu -->
-      <div x-show="open" x-transition x-cloak class="absolute inset-x-0 top-full bg-surface-strong border-b border-white/5 md:hidden">
+      <div
+        x-show="open"
+        x-transition
+        x-cloak
+        class="absolute inset-x-0 top-full bg-surface-strong border-b border-white/5 md:hidden"
+      >
         <div class="flex flex-col gap-4 p-6 text-lg font-medium">
           <a @click="close" href="/solutions">Solutions</a>
           <a @click="close" href="/technology">Technology</a>
           <a @click="close" href="/about">Our Story</a>
           <a @click="close" href="/investors">Investors</a>
-          <a @click="close" href="/contact" class="btn-primary">Join Waitlist</a>
+          <a @click="close" href="/contact" class="btn-primary"
+            >Join Waitlist</a
+          >
         </div>
       </div>
     </header>
@@ -66,12 +143,21 @@
       <!-- HERO -->
       <section class="relative pt-24 pb-20 overflow-hidden">
         <!-- Technical Grid Background -->
-        <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
-        <div class="absolute top-0 left-0 right-0 h-64 bg-gradient-to-b from-surface to-transparent pointer-events-none"></div>
-        
-        <div class="section-container relative z-10 grid gap-16 lg:grid-cols-2 lg:items-center">
+        <div
+          class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"
+        ></div>
+        <div
+          class="absolute top-0 left-0 right-0 h-64 bg-gradient-to-b from-surface to-transparent pointer-events-none"
+        ></div>
+
+        <div
+          class="section-container relative z-10 grid gap-16 lg:grid-cols-2 lg:items-center"
+        >
           <div class="max-w-xl">
-            <div class="inline-flex items-center gap-2 badge-tech mb-6" data-animate="fade-in">
+            <div
+              class="inline-flex items-center gap-2 badge-tech mb-6"
+              data-animate="fade-in"
+            >
               <span class="h-1.5 w-1.5 rounded-full bg-brand-lime"></span>
               Patent-Pending Design
             </div>
@@ -79,45 +165,82 @@
               Inside the <br />
               <span class="text-brand-yellow">SafeBat Protector.</span>
             </h1>
-            <p class="text-lg text-slate-400 leading-relaxed" data-animate="fade-up" data-delay="0.1">
-              A masterclass in miniaturization. We've engineered a chemically reactive environment that fits seamlessly inside your existing devices, neutralizing leaks without compromising power delivery.
+            <p
+              class="text-lg text-slate-400 leading-relaxed"
+              data-animate="fade-up"
+              data-delay="0.1"
+            >
+              A masterclass in miniaturization. We've engineered a chemically
+              reactive environment that fits seamlessly inside your existing
+              devices, neutralizing leaks without compromising power delivery.
             </p>
           </div>
-          
+
           <!-- Hero Visual: 3D-style Breakdown -->
           <div class="relative" data-animate="fade-in" data-delay="0.2">
-             <div class="card-premium p-8 relative overflow-hidden group">
-                <div class="absolute top-0 right-0 -mt-16 -mr-16 h-64 w-64 bg-brand-yellow/5 rounded-full blur-3xl group-hover:bg-brand-yellow/10 transition-colors duration-700"></div>
-                
-                <div class="space-y-6 relative z-10">
-                   <!-- Layer 1 -->
-                   <div class="flex items-center gap-6 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-lime/30 transition-colors">
-                      <div class="h-12 w-12 flex-shrink-0 rounded-full border border-brand-lime/50 flex items-center justify-center text-brand-lime font-bold bg-brand-lime/10">1</div>
-                      <div>
-                         <h3 class="text-white font-bold text-sm">Outer Shield</h3>
-                         <p class="text-xs text-slate-400">Recyclable, high-impact polymer casing tailored for universal AA/AAA fit.</p>
-                      </div>
-                   </div>
-                   
-                   <!-- Layer 2 -->
-                   <div class="flex items-center gap-6 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-yellow/30 transition-colors transform translate-x-4">
-                      <div class="h-12 w-12 flex-shrink-0 rounded-full border border-brand-yellow/50 flex items-center justify-center text-brand-yellow font-bold bg-brand-yellow/10">2</div>
-                      <div>
-                         <h3 class="text-white font-bold text-sm">Reactive Liner</h3>
-                         <p class="text-xs text-slate-400">Proprietary chemical matrix that instantly neutralises alkaline electrolytes on contact.</p>
-                      </div>
-                   </div>
+            <div class="card-premium p-8 relative overflow-hidden group">
+              <div
+                class="absolute top-0 right-0 -mt-16 -mr-16 h-64 w-64 bg-brand-yellow/5 rounded-full blur-3xl group-hover:bg-brand-yellow/10 transition-colors duration-700"
+              ></div>
 
-                   <!-- Layer 3 -->
-                   <div class="flex items-center gap-6 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-white/20 transition-colors">
-                      <div class="h-12 w-12 flex-shrink-0 rounded-full border border-white/50 flex items-center justify-center text-white font-bold bg-white/10">3</div>
-                      <div>
-                         <h3 class="text-white font-bold text-sm">Conductive Pass-Through</h3>
-                         <p class="text-xs text-slate-400">Precision-engineered contacts ensure zero voltage drop or power loss.</p>
-                      </div>
-                   </div>
+              <div class="space-y-6 relative z-10">
+                <!-- Layer 1 -->
+                <div
+                  class="flex items-center gap-6 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-lime/30 transition-colors"
+                >
+                  <div
+                    class="h-12 w-12 flex-shrink-0 rounded-full border border-brand-lime/50 flex items-center justify-center text-brand-lime font-bold bg-brand-lime/10"
+                  >
+                    1
+                  </div>
+                  <div>
+                    <h3 class="text-white font-bold text-sm">Outer Shield</h3>
+                    <p class="text-xs text-slate-400">
+                      Recyclable, high-impact polymer casing tailored for
+                      universal AA/AAA fit.
+                    </p>
+                  </div>
                 </div>
-             </div>
+
+                <!-- Layer 2 -->
+                <div
+                  class="flex items-center gap-6 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-yellow/30 transition-colors transform translate-x-4"
+                >
+                  <div
+                    class="h-12 w-12 flex-shrink-0 rounded-full border border-brand-yellow/50 flex items-center justify-center text-brand-yellow font-bold bg-brand-yellow/10"
+                  >
+                    2
+                  </div>
+                  <div>
+                    <h3 class="text-white font-bold text-sm">Reactive Liner</h3>
+                    <p class="text-xs text-slate-400">
+                      Proprietary chemical matrix that instantly neutralises
+                      alkaline electrolytes on contact.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Layer 3 -->
+                <div
+                  class="flex items-center gap-6 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-white/20 transition-colors"
+                >
+                  <div
+                    class="h-12 w-12 flex-shrink-0 rounded-full border border-white/50 flex items-center justify-center text-white font-bold bg-white/10"
+                  >
+                    3
+                  </div>
+                  <div>
+                    <h3 class="text-white font-bold text-sm">
+                      Conductive Pass-Through
+                    </h3>
+                    <p class="text-xs text-slate-400">
+                      Precision-engineered contacts ensure zero voltage drop or
+                      power loss.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -126,47 +249,85 @@
       <section id="usage" class="bg-surface-soft py-24 relative">
         <div class="section-container">
           <div class="text-center max-w-2xl mx-auto mb-16">
-            <p class="section-eyebrow" data-animate="fade-in">Seamless Integration</p>
-            <h2 class="text-3xl font-bold text-white mb-4" data-animate="fade-up">Fit. Load. Forget.</h2>
+            <p class="section-eyebrow" data-animate="fade-in">
+              Seamless Integration
+            </p>
+            <h2
+              class="text-3xl font-bold text-white mb-4"
+              data-animate="fade-up"
+            >
+              Fit. Load. Forget.
+            </h2>
             <p class="text-slate-400" data-animate="fade-up" data-delay="0.1">
-              We designed SafeBat to be invisible in your daily life—until you need it. Installation takes seconds and requires no tools.
+              We designed SafeBat to be invisible in your daily life—until you
+              need it. Installation takes seconds and requires no tools.
             </p>
           </div>
 
           <div class="grid md:grid-cols-3 gap-8 relative">
             <!-- Connector Line (Desktop) -->
-            <div class="hidden md:block absolute top-12 left-[20%] right-[20%] h-0.5 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+            <div
+              class="hidden md:block absolute top-12 left-[20%] right-[20%] h-0.5 bg-gradient-to-r from-transparent via-white/10 to-transparent"
+            ></div>
 
             <!-- Step 1 -->
             <div class="relative text-center group" data-animate="fade-up">
-              <div class="relative z-10 h-24 w-24 mx-auto bg-surface border border-white/10 rounded-full flex items-center justify-center mb-6 group-hover:border-brand-lime/50 group-hover:shadow-[0_0_30px_rgba(186,255,83,0.1)] transition-all duration-500">
-                <span class="text-2xl font-bold text-slate-500 group-hover:text-brand-lime transition-colors">01</span>
+              <div
+                class="relative z-10 h-24 w-24 mx-auto bg-surface border border-white/10 rounded-full flex items-center justify-center mb-6 group-hover:border-brand-lime/50 group-hover:shadow-[0_0_30px_rgba(186,255,83,0.1)] transition-all duration-500"
+              >
+                <span
+                  class="text-2xl font-bold text-slate-500 group-hover:text-brand-lime transition-colors"
+                  >01</span
+                >
               </div>
               <h3 class="text-lg font-bold text-white mb-2">Insert Capsule</h3>
               <p class="text-sm text-slate-400 max-w-xs mx-auto">
-                Place the empty SafeBat Protector into your device's battery compartment like a sleeve.
+                Place the empty SafeBat Protector into your device's battery
+                compartment like a sleeve.
               </p>
             </div>
 
             <!-- Step 2 -->
-            <div class="relative text-center group" data-animate="fade-up" data-delay="0.1">
-              <div class="relative z-10 h-24 w-24 mx-auto bg-surface border border-white/10 rounded-full flex items-center justify-center mb-6 group-hover:border-brand-lime/50 group-hover:shadow-[0_0_30px_rgba(186,255,83,0.1)] transition-all duration-500">
-                <span class="text-2xl font-bold text-slate-500 group-hover:text-brand-lime transition-colors">02</span>
+            <div
+              class="relative text-center group"
+              data-animate="fade-up"
+              data-delay="0.1"
+            >
+              <div
+                class="relative z-10 h-24 w-24 mx-auto bg-surface border border-white/10 rounded-full flex items-center justify-center mb-6 group-hover:border-brand-lime/50 group-hover:shadow-[0_0_30px_rgba(186,255,83,0.1)] transition-all duration-500"
+              >
+                <span
+                  class="text-2xl font-bold text-slate-500 group-hover:text-brand-lime transition-colors"
+                  >02</span
+                >
               </div>
               <h3 class="text-lg font-bold text-white mb-2">Load Battery</h3>
               <p class="text-sm text-slate-400 max-w-xs mx-auto">
-                Slide your standard AA/AAA battery inside the capsule. It snaps securely into place.
+                Slide your standard AA/AAA battery inside the capsule. It snaps
+                securely into place.
               </p>
             </div>
 
             <!-- Step 3 -->
-            <div class="relative text-center group" data-animate="fade-up" data-delay="0.2">
-              <div class="relative z-10 h-24 w-24 mx-auto bg-surface border border-white/10 rounded-full flex items-center justify-center mb-6 group-hover:border-brand-lime/50 group-hover:shadow-[0_0_30px_rgba(186,255,83,0.1)] transition-all duration-500">
-                <span class="text-2xl font-bold text-slate-500 group-hover:text-brand-lime transition-colors">03</span>
+            <div
+              class="relative text-center group"
+              data-animate="fade-up"
+              data-delay="0.2"
+            >
+              <div
+                class="relative z-10 h-24 w-24 mx-auto bg-surface border border-white/10 rounded-full flex items-center justify-center mb-6 group-hover:border-brand-lime/50 group-hover:shadow-[0_0_30px_rgba(186,255,83,0.1)] transition-all duration-500"
+              >
+                <span
+                  class="text-2xl font-bold text-slate-500 group-hover:text-brand-lime transition-colors"
+                  >03</span
+                >
               </div>
-              <h3 class="text-lg font-bold text-white mb-2">Total Protection</h3>
+              <h3 class="text-lg font-bold text-white mb-2">
+                Total Protection
+              </h3>
               <p class="text-sm text-slate-400 max-w-xs mx-auto">
-                Use your device. If the battery leaks, the capsule neutralises it instantly, keeping your device clean.
+                Use your device. If the battery leaks, the capsule neutralises
+                it instantly, keeping your device clean.
               </p>
             </div>
           </div>
@@ -180,71 +341,129 @@
         <div class="grid lg:grid-cols-12 gap-12">
           <!-- Roadmap Header -->
           <div class="lg:col-span-4">
-             <p class="section-eyebrow" data-animate="fade-in">Future Innovation</p>
-             <h2 class="text-3xl font-bold text-white mb-6" data-animate="fade-up">Beyond the AA.</h2>
-             <p class="text-slate-400 mb-8" data-animate="fade-up" data-delay="0.1">
-               Our vision extends to every battery-powered device in your home. We are actively developing formats for high-drain and heavy-duty applications.
-             </p>
-             <a href="/investors" class="btn-secondary text-xs">View Investor Deck</a>
+            <p class="section-eyebrow" data-animate="fade-in">
+              Future Innovation
+            </p>
+            <h2
+              class="text-3xl font-bold text-white mb-6"
+              data-animate="fade-up"
+            >
+              Beyond the AA.
+            </h2>
+            <p
+              class="text-slate-400 mb-8"
+              data-animate="fade-up"
+              data-delay="0.1"
+            >
+              Our vision extends to every battery-powered device in your home.
+              We are actively developing formats for high-drain and heavy-duty
+              applications.
+            </p>
+            <a href="/investors" class="btn-secondary text-xs"
+              >View Investor Deck</a
+            >
           </div>
 
           <!-- Roadmap Grid -->
-          <div class="lg:col-span-8 grid sm:grid-cols-2 gap-6" data-stagger-container>
-             
-             <!-- Card 1 -->
-             <article class="card-premium p-6 flex flex-col justify-between h-full bg-gradient-to-br from-white/5 to-transparent" data-animate="scale-up">
-                <div>
-                  <div class="flex justify-between items-start mb-4">
-                    <span class="badge-tech bg-brand-lime/10 text-brand-lime border-brand-lime/20">Active Pilot</span>
-                    <span class="text-xs text-slate-500 font-mono">Q1 2025</span>
-                  </div>
-                  <h3 class="text-lg font-bold text-white mb-2">AA / AAA Standard</h3>
-                  <p class="text-xs text-slate-400">Launch product focusing on the most common household battery types (remotes, toys).</p>
+          <div
+            class="lg:col-span-8 grid sm:grid-cols-2 gap-6"
+            data-stagger-container
+          >
+            <!-- Card 1 -->
+            <article
+              class="card-premium p-6 flex flex-col justify-between h-full bg-gradient-to-br from-white/5 to-transparent"
+              data-animate="scale-up"
+            >
+              <div>
+                <div class="flex justify-between items-start mb-4">
+                  <span
+                    class="badge-tech bg-brand-lime/10 text-brand-lime border-brand-lime/20"
+                    >Active Pilot</span
+                  >
+                  <span class="text-xs text-slate-500 font-mono">Q1 2025</span>
                 </div>
-                <div class="mt-6 h-1 w-full bg-white/10 rounded-full overflow-hidden">
-                  <div class="h-full bg-brand-lime w-3/4"></div>
-                </div>
-             </article>
+                <h3 class="text-lg font-bold text-white mb-2">
+                  AA / AAA Standard
+                </h3>
+                <p class="text-xs text-slate-400">
+                  Launch product focusing on the most common household battery
+                  types (remotes, toys).
+                </p>
+              </div>
+              <div
+                class="mt-6 h-1 w-full bg-white/10 rounded-full overflow-hidden"
+              >
+                <div class="h-full bg-brand-lime w-3/4"></div>
+              </div>
+            </article>
 
-             <!-- Card 2 -->
-             <article class="card-premium p-6 flex flex-col justify-between h-full" data-animate="scale-up">
-                <div>
-                  <div class="flex justify-between items-start mb-4">
-                    <span class="badge-tech">In R&D</span>
-                    <span class="text-xs text-slate-500 font-mono">Q3 2025</span>
-                  </div>
-                  <h3 class="text-lg font-bold text-white mb-2">Series C & D</h3>
-                  <p class="text-xs text-slate-400">Scaling the liner technology for larger volume electrolyte containment in flashlights and radios.</p>
+            <!-- Card 2 -->
+            <article
+              class="card-premium p-6 flex flex-col justify-between h-full"
+              data-animate="scale-up"
+            >
+              <div>
+                <div class="flex justify-between items-start mb-4">
+                  <span class="badge-tech">In R&D</span>
+                  <span class="text-xs text-slate-500 font-mono">Q3 2025</span>
                 </div>
-                <div class="mt-6 h-1 w-full bg-white/10 rounded-full overflow-hidden">
-                  <div class="h-full bg-slate-600 w-1/4"></div>
-                </div>
-             </article>
+                <h3 class="text-lg font-bold text-white mb-2">Series C & D</h3>
+                <p class="text-xs text-slate-400">
+                  Scaling the liner technology for larger volume electrolyte
+                  containment in flashlights and radios.
+                </p>
+              </div>
+              <div
+                class="mt-6 h-1 w-full bg-white/10 rounded-full overflow-hidden"
+              >
+                <div class="h-full bg-slate-600 w-1/4"></div>
+              </div>
+            </article>
 
-             <!-- Card 3 -->
-             <article class="card-premium p-6 flex flex-col justify-between h-full" data-animate="scale-up">
-                <div>
-                  <div class="flex justify-between items-start mb-4">
-                    <span class="badge-tech">Concept</span>
-                    <span class="text-xs text-slate-500 font-mono">2026+</span>
-                  </div>
-                  <h3 class="text-lg font-bold text-white mb-2">SafeBat Smart App</h3>
-                  <p class="text-xs text-slate-400">IoT integration to monitor battery health and notify users before a leak occurs.</p>
+            <!-- Card 3 -->
+            <article
+              class="card-premium p-6 flex flex-col justify-between h-full"
+              data-animate="scale-up"
+            >
+              <div>
+                <div class="flex justify-between items-start mb-4">
+                  <span class="badge-tech">Concept</span>
+                  <span class="text-xs text-slate-500 font-mono">2026+</span>
                 </div>
-                <div class="mt-6 h-1 w-full bg-white/10 rounded-full overflow-hidden">
-                  <div class="h-full bg-slate-700 w-0"></div>
-                </div>
-             </article>
+                <h3 class="text-lg font-bold text-white mb-2">
+                  SafeBat Smart App
+                </h3>
+                <p class="text-xs text-slate-400">
+                  IoT integration to monitor battery health and notify users
+                  before a leak occurs.
+                </p>
+              </div>
+              <div
+                class="mt-6 h-1 w-full bg-white/10 rounded-full overflow-hidden"
+              >
+                <div class="h-full bg-slate-700 w-0"></div>
+              </div>
+            </article>
 
-             <!-- Card 4 -->
-             <article class="card-premium p-6 flex flex-col justify-between h-full border-dashed border-slate-700" data-animate="scale-up">
-                <div>
-                   <h3 class="text-lg font-bold text-slate-300 mb-2">OEM Partnership</h3>
-                   <p class="text-xs text-slate-500">Co-developed solutions for appliance manufacturers.</p>
-                </div>
-                <a href="/contact" class="mt-4 text-xs text-brand-lime hover:underline">Contact Partnership Team →</a>
-             </article>
-
+            <!-- Card 4 -->
+            <article
+              class="card-premium p-6 flex flex-col justify-between h-full border-dashed border-slate-700"
+              data-animate="scale-up"
+            >
+              <div>
+                <h3 class="text-lg font-bold text-slate-300 mb-2">
+                  OEM Partnership
+                </h3>
+                <p class="text-xs text-slate-500">
+                  Co-developed solutions for appliance manufacturers.
+                </p>
+              </div>
+              <a
+                href="/contact"
+                class="mt-4 text-xs text-brand-lime hover:underline"
+                >Contact Partnership Team →</a
+              >
+            </article>
           </div>
         </div>
       </section>
@@ -252,45 +471,134 @@
 
     <!-- FOOTER (Standardized) -->
     <footer class="border-t border-white/5 bg-surface-strong py-16">
-      <div class="section-container grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+      <div class="section-container grid gap-12 md:grid-cols-2 lg:grid-cols-5">
+        <!-- Brand + Summary (Spans 2 columns) -->
         <div class="col-span-2">
           <a href="/" class="flex items-center gap-3 mb-6">
-            <div class="h-8 w-8 rounded-xl bg-brand-yellow flex items-center justify-center text-brand-black">
-               <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L3 7v9c0 5 9 6 9 6s9-1 9-6V7l-9-5z"/></svg>
+            <div
+              class="h-8 w-8 rounded-xl bg-brand-yellow flex items-center justify-center text-brand-black"
+            >
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L3 7v9c0 5 9 6 9 6s9-1 9-6V7l-9-5z" />
+              </svg>
             </div>
-            <span class="text-lg font-bold tracking-tight text-white uppercase">SafeBat</span>
+            <span class="text-lg font-bold tracking-tight text-white uppercase"
+              >SafeBat</span
+            >
           </a>
           <p class="text-xs text-slate-500 max-w-sm leading-relaxed">
-            SafeBat is a battery-safety and sustainability startup. We protect devices, people, and the planet through science-driven chemical neutralisation. Built by engineers, for households.
+            SafeBat is a battery-safety and sustainability startup. We protect
+            devices, people, and the planet through science-driven chemical
+            neutralisation. Built by engineers, for households.
           </p>
         </div>
-        
+
+        <!-- Column: Technology -->
         <div class="space-y-4">
-          <p class="text-xs font-bold text-white uppercase tracking-widest">Product</p>
+          <p class="text-xs font-bold text-white uppercase tracking-widest">
+            Technology
+          </p>
           <ul class="space-y-2 text-xs text-slate-500">
-            <li><a href="/solutions" class="hover:text-brand-lime transition-colors">Solutions</a></li>
-            <li><a href="/technology" class="hover:text-brand-lime transition-colors">Protector Capsule</a></li>
-            <li><a href="/technology" class="hover:text-brand-lime transition-colors">Future Sizes</a></li>
+            <li>
+              <a
+                href="/solutions"
+                class="hover:text-brand-lime transition-colors"
+                >Solutions</a
+              >
+            </li>
+            <li>
+              <a
+                href="/products"
+                class="hover:text-brand-lime transition-colors"
+                >Protector Capsule</a
+              >
+            </li>
+            <li>
+              <a
+                href="/products#roadmap"
+                class="hover:text-brand-lime transition-colors"
+                >Future Sizes</a
+              >
+            </li>
           </ul>
         </div>
 
+        <!-- Column: Company -->
         <div class="space-y-4">
-          <p class="text-xs font-bold text-white uppercase tracking-widest">Inquiries</p>
+          <p class="text-xs font-bold text-white uppercase tracking-widest">
+            Company
+          </p>
           <ul class="space-y-2 text-xs text-slate-500">
-            <li><a href="/investors" class="hover:text-brand-lime transition-colors">Investor Deck</a></li>
-            <li><a href="/contact" class="hover:text-brand-lime transition-colors">Contact Us</a></li>
-            <li><a href="/privacy" class="hover:text-brand-lime transition-colors">Privacy Policy</a></li>
+            <li>
+              <a href="/about" class="hover:text-brand-lime transition-colors"
+                >Mission &amp; Story</a
+              >
+            </li>
+            <li>
+              <a
+                href="/about#founders"
+                class="hover:text-brand-lime transition-colors"
+                >Founders</a
+              >
+            </li>
+            <li>
+              <a href="/contact" class="hover:text-brand-lime transition-colors"
+                >Contact Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="/contact#early-access"
+                class="hover:text-brand-lime transition-colors"
+                >Join Waitlist</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column: Inquiries -->
+        <div class="space-y-4">
+          <p class="text-xs font-bold text-white uppercase tracking-widest">
+            Inquiries
+          </p>
+          <ul class="space-y-2 text-xs text-slate-500">
+            <li>
+              <a
+                href="/investors"
+                class="hover:text-brand-lime transition-colors"
+                >Investor Deck</a
+              >
+            </li>
+            <li>
+              <a href="/faq" class="hover:text-brand-lime transition-colors"
+                >FAQ</a
+              >
+            </li>
+            <li>
+              <a href="/privacy" class="hover:text-brand-lime transition-colors"
+                >Privacy Policy</a
+              >
+            </li>
           </ul>
         </div>
       </div>
 
-      <div class="section-container mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div
+        class="section-container mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4"
+      >
         <p class="text-[10px] text-slate-600 uppercase tracking-widest">
-          © <span x-text="new Date().getFullYear()"></span> SafeBat. Science-Driven Battery Safety.
+          © <span x-text="new Date().getFullYear()"></span> SafeBat.
+          Science-Driven Battery Safety.
         </p>
         <div class="flex gap-6">
-          <span class="text-[10px] text-slate-600 uppercase tracking-widest">Linkedin</span>
-          <span class="text-[10px] text-slate-600 uppercase tracking-widest">X (Twitter)</span>
+          <span
+            class="text-[10px] text-slate-600 uppercase tracking-widest hover:text-white cursor-pointer transition-colors"
+            >Linkedin</span
+          >
+          <span
+            class="text-[10px] text-slate-600 uppercase tracking-widest hover:text-white cursor-pointer transition-colors"
+            >X (Twitter)</span
+          >
         </div>
       </div>
     </footer>

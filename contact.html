@@ -4,60 +4,139 @@
     <meta charset="UTF-8" />
     <title>Contact Us | SafeBat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Get in touch with SafeBat. Whether you are a partner, investor, or early adopter, we want to hear from you." />
+    <meta
+      name="description"
+      content="Get in touch with SafeBat. Whether you are a partner, investor, or early adopter, we want to hear from you."
+    />
 
     <!-- Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="icon" type="image/svg+xml" href="/safebat-logo-icon.svg" />
   </head>
-  <body class="bg-surface text-slate-100 selection:bg-brand-lime selection:text-brand-black">
-
+  <body
+    class="bg-surface text-slate-100 selection:bg-brand-lime selection:text-brand-black"
+  >
     <!-- NAVIGATION (Standardized: "Contact" tab active/implicit) -->
-    <header 
-      x-data="nav" 
+    <header
+      x-data="nav"
       class="sticky top-0 z-50 glass-surface border-b border-white/5"
     >
       <div class="section-container flex items-center justify-between py-4">
-        <a href="/" class="flex items-center gap-3 transition-transform hover:scale-[1.02]">
-          <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand-yellow shadow-lg shadow-brand-yellow/20">
-            <svg class="h-6 w-6 text-brand-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <a
+          href="/"
+          class="flex items-center gap-3 transition-transform hover:scale-[1.02]"
+        >
+          <div
+            class="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand-yellow shadow-lg shadow-brand-yellow/20"
+          >
+            <svg
+              class="h-6 w-6 text-brand-black"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
               <path d="M12 2L3 7v9c0 5 9 6 9 6s9-1 9-6V7l-9-5z" />
               <path d="M12 8v8M9 12h6" />
             </svg>
           </div>
           <div class="flex flex-col">
-            <span class="text-sm font-bold tracking-tight text-white uppercase">SafeBat</span>
-            <span class="text-[10px] font-medium tracking-wider text-brand-lime">PROTECTOR</span>
+            <span class="text-sm font-bold tracking-tight text-white uppercase"
+              >SafeBat</span
+            >
+            <span class="text-[10px] font-medium tracking-wider text-brand-lime"
+              >PROTECTOR</span
+            >
           </div>
         </a>
 
         <!-- Desktop Navigation -->
         <nav class="hidden items-center gap-8 text-[13px] font-medium md:flex">
-          <a href="/solutions" class="text-slate-400 hover:text-brand-lime transition-colors">Solutions</a>
-          <a href="/technology" class="text-slate-400 hover:text-brand-lime transition-colors">Technology</a>
-          <a href="/about" class="text-slate-400 hover:text-brand-lime transition-colors">Our Story</a>
-          <a href="/investors" class="text-slate-400 hover:text-brand-lime transition-colors text-xs border border-white/10 px-3 py-1 rounded-full">Investors</a>
-          <a href="/contact" class="btn-secondary py-2 px-5 text-xs text-white border-white/20">Contact Us</a>
+          <a
+            href="/solutions"
+            class="text-slate-400 hover:text-brand-lime transition-colors"
+            >Solutions</a
+          >
+          <a
+            href="/technology"
+            class="text-slate-400 hover:text-brand-lime transition-colors"
+            >Technology</a
+          >
+          <a
+            href="/about"
+            class="text-slate-400 hover:text-brand-lime transition-colors"
+            >Our Story</a
+          >
+          <a
+            href="/investors"
+            class="text-slate-400 hover:text-brand-lime transition-colors text-xs border border-white/10 px-3 py-1 rounded-full"
+            >Investors</a
+          >
+          <a
+            href="/contact"
+            class="btn-secondary py-2 px-5 text-xs text-white border-white/20"
+            >Contact Us</a
+          >
         </nav>
 
         <!-- Mobile Toggle -->
-        <button @click="toggle" class="p-2 md:hidden text-slate-300" aria-label="Menu">
-          <svg x-show="!open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-          <svg x-show="open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        <button
+          @click="toggle"
+          class="p-2 md:hidden text-slate-300"
+          aria-label="Menu"
+        >
+          <svg
+            x-show="!open"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+          <svg
+            x-show="open"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
         </button>
       </div>
 
       <!-- Mobile Menu -->
-      <div x-show="open" x-transition x-cloak class="absolute inset-x-0 top-full bg-surface-strong border-b border-white/5 md:hidden">
+      <div
+        x-show="open"
+        x-transition
+        x-cloak
+        class="absolute inset-x-0 top-full bg-surface-strong border-b border-white/5 md:hidden"
+      >
         <div class="flex flex-col gap-4 p-6 text-lg font-medium">
           <a @click="close" href="/solutions">Solutions</a>
           <a @click="close" href="/technology">Technology</a>
           <a @click="close" href="/about">Our Story</a>
           <a @click="close" href="/investors">Investors</a>
-          <a @click="close" href="/contact" class="text-brand-lime">Contact Us</a>
+          <a @click="close" href="/contact" class="text-brand-lime"
+            >Contact Us</a
+          >
         </div>
       </div>
     </header>
@@ -71,8 +150,14 @@
             Let's build a safer future <br />
             <span class="text-slate-400">together.</span>
           </h1>
-          <p class="text-lg text-slate-400 leading-relaxed" data-animate="fade-up" data-delay="0.1">
-            Whether you are a global retailer, a potential OEM partner, or an early adopter wanting to protect your home — we want to hear from you.
+          <p
+            class="text-lg text-slate-400 leading-relaxed"
+            data-animate="fade-up"
+            data-delay="0.1"
+          >
+            Whether you are a global retailer, a potential OEM partner, or an
+            early adopter wanting to protect your home — we want to hear from
+            you.
           </p>
         </div>
       </section>
@@ -80,154 +165,343 @@
       <!-- CONTACT FORM SECTION -->
       <section class="section-container pb-24">
         <div class="grid lg:grid-cols-12 gap-8 items-start">
-          
           <!-- Contact Form -->
-          <div class="lg:col-span-7 card-premium p-8 lg:p-10" data-animate="fade-up">
-             <form class="space-y-6">
-                <div class="grid sm:grid-cols-2 gap-6">
-                  <div class="space-y-2">
-                    <label class="text-xs font-bold text-white uppercase tracking-wider">First Name</label>
-                    <input type="text" placeholder="Jane" class="w-full bg-surface border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand-lime/50 focus:ring-1 focus:ring-brand-lime/50 transition-all" />
-                  </div>
-                  <div class="space-y-2">
-                    <label class="text-xs font-bold text-white uppercase tracking-wider">Last Name</label>
-                    <input type="text" placeholder="Doe" class="w-full bg-surface border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand-lime/50 focus:ring-1 focus:ring-brand-lime/50 transition-all" />
-                  </div>
-                </div>
-
+          <div
+            class="lg:col-span-7 card-premium p-8 lg:p-10"
+            data-animate="fade-up"
+          >
+            <form class="space-y-6">
+              <div class="grid sm:grid-cols-2 gap-6">
                 <div class="space-y-2">
-                   <label class="text-xs font-bold text-white uppercase tracking-wider">Email Address</label>
-                   <input type="email" placeholder="jane@company.com" class="w-full bg-surface border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand-lime/50 focus:ring-1 focus:ring-brand-lime/50 transition-all" />
+                  <label
+                    class="text-xs font-bold text-white uppercase tracking-wider"
+                    >First Name</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Jane"
+                    class="w-full bg-surface border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand-lime/50 focus:ring-1 focus:ring-brand-lime/50 transition-all"
+                  />
                 </div>
-
                 <div class="space-y-2">
-                   <label class="text-xs font-bold text-white uppercase tracking-wider">I am a...</label>
-                   <div class="grid grid-cols-2 gap-3">
-                      <label class="cursor-pointer">
-                        <input type="radio" name="role" class="peer sr-only" />
-                        <div class="rounded-xl border border-white/10 bg-surface/50 px-4 py-3 text-sm text-slate-400 peer-checked:border-brand-lime peer-checked:text-brand-lime hover:bg-surface transition-all text-center">
-                          Investor
-                        </div>
-                      </label>
-                      <label class="cursor-pointer">
-                        <input type="radio" name="role" class="peer sr-only" />
-                        <div class="rounded-xl border border-white/10 bg-surface/50 px-4 py-3 text-sm text-slate-400 peer-checked:border-brand-lime peer-checked:text-brand-lime hover:bg-surface transition-all text-center">
-                          Partner / OEM
-                        </div>
-                      </label>
-                      <label class="cursor-pointer">
-                        <input type="radio" name="role" class="peer sr-only" />
-                        <div class="rounded-xl border border-white/10 bg-surface/50 px-4 py-3 text-sm text-slate-400 peer-checked:border-brand-lime peer-checked:text-brand-lime hover:bg-surface transition-all text-center">
-                          Retailer
-                        </div>
-                      </label>
-                      <label class="cursor-pointer">
-                        <input type="radio" name="role" class="peer sr-only" />
-                        <div class="rounded-xl border border-white/10 bg-surface/50 px-4 py-3 text-sm text-slate-400 peer-checked:border-brand-lime peer-checked:text-brand-lime hover:bg-surface transition-all text-center">
-                          Customer
-                        </div>
-                      </label>
-                   </div>
+                  <label
+                    class="text-xs font-bold text-white uppercase tracking-wider"
+                    >Last Name</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Doe"
+                    class="w-full bg-surface border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand-lime/50 focus:ring-1 focus:ring-brand-lime/50 transition-all"
+                  />
                 </div>
+              </div>
 
-                <div class="space-y-2">
-                   <label class="text-xs font-bold text-white uppercase tracking-wider">Message</label>
-                   <textarea rows="4" placeholder="Tell us how we can work together..." class="w-full bg-surface border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand-lime/50 focus:ring-1 focus:ring-brand-lime/50 transition-all"></textarea>
+              <div class="space-y-2">
+                <label
+                  class="text-xs font-bold text-white uppercase tracking-wider"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  placeholder="jane@company.com"
+                  class="w-full bg-surface border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand-lime/50 focus:ring-1 focus:ring-brand-lime/50 transition-all"
+                />
+              </div>
+
+              <div class="space-y-2">
+                <label
+                  class="text-xs font-bold text-white uppercase tracking-wider"
+                  >I am a...</label
+                >
+                <div class="grid grid-cols-2 gap-3">
+                  <label class="cursor-pointer">
+                    <input type="radio" name="role" class="peer sr-only" />
+                    <div
+                      class="rounded-xl border border-white/10 bg-surface/50 px-4 py-3 text-sm text-slate-400 peer-checked:border-brand-lime peer-checked:text-brand-lime hover:bg-surface transition-all text-center"
+                    >
+                      Investor
+                    </div>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="role" class="peer sr-only" />
+                    <div
+                      class="rounded-xl border border-white/10 bg-surface/50 px-4 py-3 text-sm text-slate-400 peer-checked:border-brand-lime peer-checked:text-brand-lime hover:bg-surface transition-all text-center"
+                    >
+                      Partner / OEM
+                    </div>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="role" class="peer sr-only" />
+                    <div
+                      class="rounded-xl border border-white/10 bg-surface/50 px-4 py-3 text-sm text-slate-400 peer-checked:border-brand-lime peer-checked:text-brand-lime hover:bg-surface transition-all text-center"
+                    >
+                      Retailer
+                    </div>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="role" class="peer sr-only" />
+                    <div
+                      class="rounded-xl border border-white/10 bg-surface/50 px-4 py-3 text-sm text-slate-400 peer-checked:border-brand-lime peer-checked:text-brand-lime hover:bg-surface transition-all text-center"
+                    >
+                      Customer
+                    </div>
+                  </label>
                 </div>
+              </div>
 
-                <button type="submit" class="w-full btn-primary">Send Message</button>
-             </form>
+              <div class="space-y-2">
+                <label
+                  class="text-xs font-bold text-white uppercase tracking-wider"
+                  >Message</label
+                >
+                <textarea
+                  rows="4"
+                  placeholder="Tell us how we can work together..."
+                  class="w-full bg-surface border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand-lime/50 focus:ring-1 focus:ring-brand-lime/50 transition-all"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="w-full btn-primary">
+                Send Message
+              </button>
+            </form>
           </div>
 
           <!-- Direct Contact Info -->
           <div class="lg:col-span-5 space-y-6" data-stagger-container>
-            
             <!-- Quick Link 1 -->
-            <a href="mailto:investors@safebat.com" class="block card-premium p-6 group hover:border-brand-yellow/30" data-animate="slide-in-right">
-               <div class="flex items-start gap-4">
-                  <div class="p-3 rounded-xl bg-brand-yellow/10 text-brand-yellow group-hover:scale-110 transition-transform">
-                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-                  </div>
-                  <div>
-                     <h3 class="text-white font-bold mb-1">Investor Relations</h3>
-                     <p class="text-xs text-slate-400">Request pitch deck and financial roadmap.</p>
-                     <p class="mt-2 text-sm text-brand-yellow">investors@safebat.com</p>
-                  </div>
-               </div>
+            <a
+              href="mailto:investors@safebat.com"
+              class="block card-premium p-6 group hover:border-brand-yellow/30"
+              data-animate="slide-in-right"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="p-3 rounded-xl bg-brand-yellow/10 text-brand-yellow group-hover:scale-110 transition-transform"
+                >
+                  <svg
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-white font-bold mb-1">Investor Relations</h3>
+                  <p class="text-xs text-slate-400">
+                    Request pitch deck and financial roadmap.
+                  </p>
+                  <p class="mt-2 text-sm text-brand-yellow">
+                    investors@safebat.com
+                  </p>
+                </div>
+              </div>
             </a>
 
             <!-- Quick Link 2 -->
-            <a href="mailto:partners@safebat.com" class="block card-premium p-6 group hover:border-brand-lime/30" data-animate="slide-in-right">
-               <div class="flex items-start gap-4">
-                  <div class="p-3 rounded-xl bg-brand-lime/10 text-brand-lime group-hover:scale-110 transition-transform">
-                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-                  </div>
-                  <div>
-                     <h3 class="text-white font-bold mb-1">OEM & Retail Partners</h3>
-                     <p class="text-xs text-slate-400">Discuss manufacturing integration and distribution.</p>
-                     <p class="mt-2 text-sm text-brand-lime">partners@safebat.com</p>
-                  </div>
-               </div>
+            <a
+              href="mailto:partners@safebat.com"
+              class="block card-premium p-6 group hover:border-brand-lime/30"
+              data-animate="slide-in-right"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="p-3 rounded-xl bg-brand-lime/10 text-brand-lime group-hover:scale-110 transition-transform"
+                >
+                  <svg
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-white font-bold mb-1">
+                    OEM & Retail Partners
+                  </h3>
+                  <p class="text-xs text-slate-400">
+                    Discuss manufacturing integration and distribution.
+                  </p>
+                  <p class="mt-2 text-sm text-brand-lime">
+                    partners@safebat.com
+                  </p>
+                </div>
+              </div>
             </a>
 
             <!-- Location -->
-            <div class="card-premium p-6 border-dashed border-slate-700" data-animate="slide-in-right">
-               <h3 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Headquarters</h3>
-               <p class="text-sm text-white font-medium">SafeBat Global Operations</p>
-               <p class="text-xs text-slate-400 mt-1">Madrid, Spain (EU)</p>
-               <div class="mt-4 flex gap-4">
-                  <span class="h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
-                  <span class="text-[10px] text-slate-400 uppercase tracking-widest">Operational</span>
-               </div>
+            <div
+              class="card-premium p-6 border-dashed border-slate-700"
+              data-animate="slide-in-right"
+            >
+              <h3
+                class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4"
+              >
+                Headquarters
+              </h3>
+              <p class="text-sm text-white font-medium">
+                SafeBat Global Operations
+              </p>
+              <p class="text-xs text-slate-400 mt-1">Madrid, Spain (EU)</p>
+              <div class="mt-4 flex gap-4">
+                <span
+                  class="h-2 w-2 rounded-full bg-green-500 animate-pulse"
+                ></span>
+                <span
+                  class="text-[10px] text-slate-400 uppercase tracking-widest"
+                  >Operational</span
+                >
+              </div>
             </div>
-
           </div>
         </div>
       </section>
-
     </main>
 
     <!-- FOOTER (Standardized) -->
     <footer class="border-t border-white/5 bg-surface-strong py-16">
-      <div class="section-container grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+      <div class="section-container grid gap-12 md:grid-cols-2 lg:grid-cols-5">
+        <!-- Brand + Summary (Spans 2 columns) -->
         <div class="col-span-2">
           <a href="/" class="flex items-center gap-3 mb-6">
-            <div class="h-8 w-8 rounded-xl bg-brand-yellow flex items-center justify-center text-brand-black">
-               <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L3 7v9c0 5 9 6 9 6s9-1 9-6V7l-9-5z"/></svg>
+            <div
+              class="h-8 w-8 rounded-xl bg-brand-yellow flex items-center justify-center text-brand-black"
+            >
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L3 7v9c0 5 9 6 9 6s9-1 9-6V7l-9-5z" />
+              </svg>
             </div>
-            <span class="text-lg font-bold tracking-tight text-white uppercase">SafeBat</span>
+            <span class="text-lg font-bold tracking-tight text-white uppercase"
+              >SafeBat</span
+            >
           </a>
           <p class="text-xs text-slate-500 max-w-sm leading-relaxed">
-            SafeBat is a battery-safety and sustainability startup. We protect devices, people, and the planet through science-driven chemical neutralisation. Built by engineers, for households.
+            SafeBat is a battery-safety and sustainability startup. We protect
+            devices, people, and the planet through science-driven chemical
+            neutralisation. Built by engineers, for households.
           </p>
         </div>
-        
+
+        <!-- Column: Technology -->
         <div class="space-y-4">
-          <p class="text-xs font-bold text-white uppercase tracking-widest">Product</p>
+          <p class="text-xs font-bold text-white uppercase tracking-widest">
+            Technology
+          </p>
           <ul class="space-y-2 text-xs text-slate-500">
-            <li><a href="/solutions" class="hover:text-brand-lime transition-colors">Solutions</a></li>
-            <li><a href="/technology" class="hover:text-brand-lime transition-colors">Protector Capsule</a></li>
-            <li><a href="/technology" class="hover:text-brand-lime transition-colors">Future Sizes</a></li>
+            <li>
+              <a
+                href="/solutions"
+                class="hover:text-brand-lime transition-colors"
+                >Solutions</a
+              >
+            </li>
+            <li>
+              <a
+                href="/products"
+                class="hover:text-brand-lime transition-colors"
+                >Protector Capsule</a
+              >
+            </li>
+            <li>
+              <a
+                href="/products#roadmap"
+                class="hover:text-brand-lime transition-colors"
+                >Future Sizes</a
+              >
+            </li>
           </ul>
         </div>
 
+        <!-- Column: Company -->
         <div class="space-y-4">
-          <p class="text-xs font-bold text-white uppercase tracking-widest">Inquiries</p>
+          <p class="text-xs font-bold text-white uppercase tracking-widest">
+            Company
+          </p>
           <ul class="space-y-2 text-xs text-slate-500">
-            <li><a href="/investors" class="hover:text-brand-lime transition-colors">Investor Deck</a></li>
-            <li><a href="/contact" class="hover:text-brand-lime transition-colors">Contact Us</a></li>
-            <li><a href="/privacy" class="hover:text-brand-lime transition-colors">Privacy Policy</a></li>
+            <li>
+              <a href="/about" class="hover:text-brand-lime transition-colors"
+                >Mission &amp; Story</a
+              >
+            </li>
+            <li>
+              <a
+                href="/about#founders"
+                class="hover:text-brand-lime transition-colors"
+                >Founders</a
+              >
+            </li>
+            <li>
+              <a href="/contact" class="hover:text-brand-lime transition-colors"
+                >Contact Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="/contact#early-access"
+                class="hover:text-brand-lime transition-colors"
+                >Join Waitlist</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column: Inquiries -->
+        <div class="space-y-4">
+          <p class="text-xs font-bold text-white uppercase tracking-widest">
+            Inquiries
+          </p>
+          <ul class="space-y-2 text-xs text-slate-500">
+            <li>
+              <a
+                href="/investors"
+                class="hover:text-brand-lime transition-colors"
+                >Investor Deck</a
+              >
+            </li>
+            <li>
+              <a href="/faq" class="hover:text-brand-lime transition-colors"
+                >FAQ</a
+              >
+            </li>
+            <li>
+              <a href="/privacy" class="hover:text-brand-lime transition-colors"
+                >Privacy Policy</a
+              >
+            </li>
           </ul>
         </div>
       </div>
 
-      <div class="section-container mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div
+        class="section-container mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4"
+      >
         <p class="text-[10px] text-slate-600 uppercase tracking-widest">
-          © <span x-text="new Date().getFullYear()"></span> SafeBat. Science-Driven Battery Safety.
+          © <span x-text="new Date().getFullYear()"></span> SafeBat.
+          Science-Driven Battery Safety.
         </p>
         <div class="flex gap-6">
-          <span class="text-[10px] text-slate-600 uppercase tracking-widest">Linkedin</span>
-          <span class="text-[10px] text-slate-600 uppercase tracking-widest">X (Twitter)</span>
+          <span
+            class="text-[10px] text-slate-600 uppercase tracking-widest hover:text-white cursor-pointer transition-colors"
+            >Linkedin</span
+          >
+          <span
+            class="text-[10px] text-slate-600 uppercase tracking-widest hover:text-white cursor-pointer transition-colors"
+            >X (Twitter)</span
+          >
         </div>
       </div>
     </footer>
