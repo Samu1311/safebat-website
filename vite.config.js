@@ -10,7 +10,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         solutions: resolve(__dirname, "solutions.html"),
-        products: resolve(__dirname, "products.html"),
+        products: resolve(__dirname, "technology.html"),
         about: resolve(__dirname, "about.html"),
         contact: resolve(__dirname, "contact.html"),
         investors: resolve(__dirname, "investors.html")
@@ -23,7 +23,7 @@ export default defineConfig({
     alias: {
       "@": resolve(__dirname, "src"),
       "@scripts": resolve(__dirname, "src/scripts"),
-      "@styles": resolve(__dirname, "src/styles"),
+      "@styles": resolve(__dirname, "src"),
       "@assets": resolve(__dirname, "src/assets")
     }
   }

@@ -1,437 +1,247 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <title>Investors – SafeBat</title>
+    <title>Investor Relations | SafeBat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Page-specific SEO description here." />
+    <meta name="description" content="SafeBat Investment Opportunity: Tapping into the multi-billion unit battery market with patent-pending safety technology." />
 
-    <!-- Inter font (brand primary) -->
+    <!-- Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="icon" type="image/svg+xml" href="./public/safebat-logo-icon.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <link rel="icon" type="image/svg+xml" href="/safebat-logo-icon.svg" />
   </head>
-  <body class="bg-surface text-slate-50">
-    <!-- HEADER -->
-    <header
-      x-data="nav"
-      class="sticky top-0 z-40 border-b border-white/5 bg-surface/80 backdrop-blur-xl"
+  <body class="bg-surface text-slate-100 selection:bg-brand-lime selection:text-brand-black">
+
+    <!-- NAVIGATION (Standardized: "Investors" tab active) -->
+    <header 
+      x-data="nav" 
+      class="sticky top-0 z-50 glass-surface border-b border-white/5"
     >
-      <div
-        class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4"
-      >
-        <a
-          href="index.html"
-          class="flex items-center gap-2"
-          data-animate="fade-in"
-        >
-          <div
-            class="flex h-9 w-9 items-center justify-center rounded-2xl bg-batteryYellow text-carbonBlack"
-          >
-            <!-- SafeBat battery-within-shield hint -->
-            <span class="text-xs font-bold">SB</span>
+      <div class="section-container flex items-center justify-between py-4">
+        <a href="/" class="flex items-center gap-3 transition-transform hover:scale-[1.02]">
+          <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand-yellow shadow-lg shadow-brand-yellow/20">
+            <svg class="h-6 w-6 text-brand-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 2L3 7v9c0 5 9 6 9 6s9-1 9-6V7l-9-5z" />
+              <path d="M12 8v8M9 12h6" />
+            </svg>
           </div>
           <div class="flex flex-col">
-            <span class="text-sm font-semibold tracking-tight">SafeBat</span>
-            <span class="text-[11px] text-slate-400"
-              >Science-Driven Battery Safety</span
-            >
+            <span class="text-sm font-bold tracking-tight text-white uppercase">SafeBat</span>
+            <span class="text-[10px] font-medium tracking-wider text-brand-lime">PROTECTOR</span>
           </div>
         </a>
 
-        <!-- Desktop nav -->
-        <nav class="hidden items-center gap-6 text-sm md:flex">
-          <a href="solutions.html" class="text-slate-300 hover:text-white"
-            >Solutions</a
-          >
-          <a href="products.html" class="text-slate-300 hover:text-white"
-            >Product</a
-          >
-          <a href="about.html" class="text-slate-300 hover:text-white">About</a>
-          <a href="investors.html" class="text-slate-300 hover:text-white"
-            >Investors</a
-          >
-          <a href="contact.html" class="text-slate-300 hover:text-white"
-            >Contact</a
-          >
-          <a
-            href="contact.html#early-access"
-            class="badge-soft bg-batteryYellow text-[11px] font-semibold text-carbonBlack shadow-soft-card hover:shadow-soft-lg"
-          >
-            Join the Waitlist
-          </a>
+        <!-- Desktop Navigation -->
+        <nav class="hidden items-center gap-8 text-[13px] font-medium md:flex">
+          <a href="/solutions" class="text-slate-400 hover:text-brand-lime transition-colors">Solutions</a>
+          <a href="/products" class="text-slate-400 hover:text-brand-lime transition-colors">Technology</a>
+          <a href="/about" class="text-slate-400 hover:text-brand-lime transition-colors">Our Story</a>
+          <a href="/investors" class="text-white hover:text-brand-lime transition-colors text-xs border border-white/10 bg-white/5 px-3 py-1 rounded-full">Investors</a>
+          <a href="/contact" class="btn-primary py-2 px-5 text-xs">Contact Us</a>
         </nav>
 
-        <!-- Mobile button -->
-        <button
-          @click="toggle"
-          class="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 p-2 md:hidden"
-          aria-label="Toggle navigation"
-        >
-          <svg
-            x-show="!open"
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.5"
-              d="M4 7h16M4 12h16M4 17h12"
-            />
-          </svg>
-          <svg
-            x-show="open"
-            x-cloak
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.5"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
+        <!-- Mobile Toggle -->
+        <button @click="toggle" class="p-2 md:hidden text-slate-300" aria-label="Menu">
+          <svg x-show="!open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg x-show="open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
       </div>
 
-      <!-- Mobile nav -->
-      <div
-        x-show="open"
-        x-transition.opacity
-        x-cloak
-        class="border-t border-white/5 bg-surface md:hidden"
-      >
-        <div class="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3 text-sm">
-          <a @click="close" href="solutions.html" class="py-2 text-slate-200"
-            >Solutions</a
-          >
-          <a @click="close" href="products.html" class="py-2 text-slate-200"
-            >Product</a
-          >
-          <a @click="close" href="about.html" class="py-2 text-slate-200"
-            >About</a
-          >
-          <a @click="close" href="investors.html" class="py-2 text-slate-200"
-            >Investors</a
-          >
-          <a @click="close" href="contact.html" class="py-2 text-slate-200"
-            >Contact</a
-          >
-          <a
-            @click="close"
-            href="contact.html#early-access"
-            class="mt-2 inline-flex items-center justify-center rounded-full bg-batteryYellow px-4 py-2 text-[11px] font-semibold text-carbonBlack shadow-soft-card"
-          >
-            Join the Waitlist
-          </a>
+      <!-- Mobile Menu -->
+      <div x-show="open" x-transition x-cloak class="absolute inset-x-0 top-full bg-surface-strong border-b border-white/5 md:hidden">
+        <div class="flex flex-col gap-4 p-6 text-lg font-medium">
+          <a @click="close" href="/solutions">Solutions</a>
+          <a @click="close" href="/products">Technology</a>
+          <a @click="close" href="/about">Our Story</a>
+          <a @click="close" href="/investors">Investors</a>
+          <a @click="close" href="/contact" class="btn-primary">Contact Us</a>
         </div>
       </div>
     </header>
 
     <main>
-      <!-- Investor overview -->
-      <section class="mx-auto max-w-6xl px-4 pt-12 md:pt-20" id="top">
-        <p class="section-eyebrow" data-animate="fade-in">Investor overview</p>
-        <h1
-          class="text-2xl font-semibold tracking-tight sm:text-3xl"
-          data-animate="fade-up"
-        >
-          A first-mover in reactive battery leak neutralisation.
-        </h1>
-        <p
-          class="mt-3 max-w-2xl text-sm text-slate-300"
-          data-animate="fade-up"
-          data-delay="0.1"
-        >
-          SafeBat is building a new product category at the intersection of
-          battery safety, household electronics and sustainability.
-        </p>
-      </section>
-
-      <!-- Market & opportunity -->
-      <section class="mx-auto max-w-6xl px-4 py-10" id="opportunity">
-        <div class="max-w-2xl">
-          <p class="section-eyebrow" data-animate="fade-in">
-            Market & opportunity
-          </p>
-          <h2
-            class="text-xl font-semibold tracking-tight sm:text-2xl"
-            data-animate="fade-up"
-          >
-            A household-scale problem with global relevance.
-          </h2>
-          <p
-            class="mt-3 text-sm text-slate-300"
-            data-animate="fade-up"
-            data-delay="0.1"
-          >
-            Billions of AA/AAA batteries are sold yearly for remotes, toys,
-            controllers, flashlights and small appliances. Many devices are
-            damaged by leaks, while leaking batteries contaminate soil and water
-            and pose health risks.
+      <!-- HERO -->
+      <section class="relative pt-24 pb-20 overflow-hidden">
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none"></div>
+        
+        <div class="section-container relative z-10 text-center max-w-4xl">
+          <div class="inline-flex items-center gap-2 badge-tech mb-6 bg-brand-lime/10 border-brand-lime/20 text-brand-lime" data-animate="fade-in">
+            <span class="h-1.5 w-1.5 rounded-full bg-brand-lime animate-pulse"></span>
+            Series A Opportunity
+          </div>
+          <h1 class="h1-premium mb-6" data-animate="fade-up">
+            Defining the <br />
+            <span class="text-brand-yellow">Battery Safety Standard.</span>
+          </h1>
+          <p class="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed" data-animate="fade-up" data-delay="0.1">
+            SafeBat is creating a new product category in consumer electronics. We address the unserved market of device protection and environmental safety with a scalable, patent-pending solution.
           </p>
         </div>
+      </section>
 
-        <div class="mt-8 stat-grid">
-          <div class="stat-card" data-animate="fade-up">
-            <div class="stat-label">Problem</div>
-            <p class="mt-1 text-xs text-slate-300">
-              Leaked electrolyte corrodes terminals and boards, harms health and
-              reduces battery efficiency.
-            </p>
-          </div>
-          <div class="stat-card" data-animate="fade-up" data-delay="0.1">
-            <div class="stat-label">Gap</div>
-            <p class="mt-1 text-xs text-slate-300">
-              Existing consumer products focus on storage and transport. None
-              neutralise leaks inside devices.
-            </p>
-          </div>
-          <div class="stat-card" data-animate="fade-up" data-delay="0.2">
-            <div class="stat-label">Opportunity</div>
-            <p class="mt-1 text-xs text-slate-300">
-              A simple, low-cost accessory that aligns with eco-trends and
-              circular-economy goals.
-            </p>
-          </div>
+      <!-- MARKET DATA -->
+      <section class="section-container pb-24">
+        <div class="grid md:grid-cols-3 gap-6" data-stagger-container>
+           
+           <div class="card-premium p-8 text-center group hover:border-brand-lime/30" data-animate="fade-up">
+              <div class="text-4xl font-bold text-white mb-2 group-hover:text-brand-lime transition-colors">15Bn+</div>
+              <div class="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-4">Total Addressable Market</div>
+              <p class="text-xs text-slate-400">AA/AAA batteries sold annually worldwide, with zero built-in leak protection.</p>
+           </div>
+
+           <div class="card-premium p-8 text-center group hover:border-brand-yellow/30" data-animate="fade-up">
+              <div class="text-4xl font-bold text-white mb-2 group-hover:text-brand-yellow transition-colors">0</div>
+              <div class="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-4">Direct Competitors</div>
+              <p class="text-xs text-slate-400">Current solutions focus on passive storage. No reactive neutralisation product exists.</p>
+           </div>
+
+           <div class="card-premium p-8 text-center group hover:border-blue-400/30" data-animate="fade-up">
+              <div class="text-4xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">ESG</div>
+              <div class="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-4">Investment Grade</div>
+              <p class="text-xs text-slate-400">Directly addresses UN SDGs for responsible consumption and environmental protection.</p>
+           </div>
+
         </div>
       </section>
 
       <div class="section-divider"></div>
 
-      <!-- USP & moat -->
-      <section class="mx-auto max-w-6xl px-4 py-10" id="usp">
-        <div class="max-w-2xl">
-          <p class="section-eyebrow" data-animate="fade-in">
-            Unique selling proposition
-          </p>
-          <h2
-            class="text-xl font-semibold tracking-tight sm:text-2xl"
-            data-animate="fade-up"
-          >
-            Reactive capsules that neutralise leaks, not just hold batteries.
-          </h2>
-          <p
-            class="mt-3 text-sm text-slate-300"
-            data-animate="fade-up"
-            data-delay="0.1"
-          >
-            Unlike ordinary battery cases, the SafeBat Protector uses a
-            proprietary chemical reaction to neutralise leaked electrolyte
-            inside devices, preventing corrosion and environmental
-            contamination.
-          </p>
-        </div>
-
-        <div class="mt-8 grid gap-5 md:grid-cols-3">
-          <article
-            class="card-surface p-5 text-xs text-slate-300"
-            data-animate="fade-up"
-          >
-            <p class="badge-soft mb-2">Technology</p>
-            <p>
-              Reactive liner neutralises corrosive compounds while remaining
-              safe and eco-friendly.
+      <!-- COMPETITIVE ADVANTAGE -->
+      <section id="usp" class="section-container py-16">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="section-eyebrow" data-animate="fade-in">The Moat</p>
+            <h2 class="text-3xl font-bold text-white mb-6" data-animate="fade-up">Defensible Technology.</h2>
+            <p class="text-slate-400 mb-8 leading-relaxed" data-animate="fade-up" data-delay="0.1">
+              Our advantage lies in the proprietary chemical formulation of our reactive liner. It is not just a plastic shell; it is an active chemical system designed to be shelf-stable yet instantly reactive to alkaline leaks.
             </p>
-          </article>
-          <article
-            class="card-surface p-5 text-xs text-slate-300"
-            data-animate="fade-up"
-            data-delay="0.1"
-          >
-            <p class="badge-soft mb-2">Economics</p>
-            <p>
-              Low manufacturing cost, mass-market price point and strong add-on
-              potential at retail.
-            </p>
-          </article>
-          <article
-            class="card-surface p-5 text-xs text-slate-300"
-            data-animate="fade-up"
-            data-delay="0.2"
-          >
-            <p class="badge-soft mb-2">Moat</p>
-            <p>
-              Patentability of chemistry, first-mover advantage and potential
-              brand equity with early adopters and partners.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <div class="section-divider"></div>
-
-      <!-- Roadmap highlight -->
-      <section class="mx-auto max-w-6xl px-4 py-10" id="roadmap">
-        <div class="max-w-2xl">
-          <p class="section-eyebrow" data-animate="fade-in">Roadmap & focus</p>
-          <h2
-            class="text-xl font-semibold tracking-tight sm:text-2xl"
-            data-animate="fade-up"
-          >
-            From household pilot to platform for safe battery use.
-          </h2>
-        </div>
-
-        <ol class="timeline">
-          <li class="timeline-item" data-animate="fade-up">
-            <div class="mb-1 text-xs text-slate-400">Phase 1</div>
-            <div class="text-sm font-semibold">
-              Prototype validation & early adopters
-            </div>
-            <p class="text-xs text-slate-300">
-              Complete lab testing, refine materials, and run pilots with
-              eco-conscious households and DIY users.
-            </p>
-          </li>
-          <li class="timeline-item" data-animate="fade-up" data-delay="0.1">
-            <div class="mb-1 text-xs text-slate-400">Phase 2</div>
-            <div class="text-sm font-semibold">Retail launch & OEM pilots</div>
-            <p class="text-xs text-slate-300">
-              Enter selected retail channels and explore co-packaging with
-              appliance and toy manufacturers.
-            </p>
-          </li>
-          <li class="timeline-item" data-animate="fade-up" data-delay="0.2">
-            <div class="mb-1 text-xs text-slate-400">Phase 3</div>
-            <div class="text-sm font-semibold">
-              Expanded portfolio & digital layer
-            </div>
-            <p class="text-xs text-slate-300">
-              Add new capsule sizes, multi-battery formats and a smart app layer
-              for monitoring and education.
-            </p>
-          </li>
-        </ol>
-      </section>
-
-      <div class="section-divider"></div>
-
-      <!-- Contact for investors -->
-      <section class="mx-auto max-w-6xl px-4 pb-16" id="contact">
-        <div class="card-surface p-6" data-animate="fade-up">
-          <p class="section-eyebrow mb-2">Get in touch</p>
-          <h2 class="text-lg font-semibold tracking-tight sm:text-xl">
-            Interested in supporting science-driven battery safety?
-          </h2>
-          <p class="mt-2 text-xs text-slate-300">
-            We welcome conversations with ESG and sustainability-focused
-            investors who see potential in household-scale protective
-            technologies.
-          </p>
-          <div
-            class="mt-4 flex flex-wrap items-center gap-4 text-xs text-slate-300"
-          >
-            <a
-              href="contact.html#investor-contact"
-              class="inline-flex items-center justify-center rounded-full bg-batteryYellow px-5 py-2.5 text-[11px] font-semibold text-carbonBlack shadow-soft-lg hover:bg-amber-300"
-            >
-              Contact the team
-            </a>
-            <a href="#top" class="pill-link"> Back to top ↑ </a>
+            
+            <ul class="space-y-4" data-animate="fade-up" data-delay="0.2">
+              <li class="flex items-center gap-4 p-4 rounded-xl bg-surface-soft border border-white/5">
+                <div class="h-8 w-8 rounded-full bg-brand-lime/10 flex items-center justify-center text-brand-lime">
+                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <div>
+                  <strong class="block text-white text-sm">First Mover Advantage</strong>
+                  <span class="text-xs text-slate-500">Establishing brand equity as the "Safe" choice.</span>
+                </div>
+              </li>
+              <li class="flex items-center gap-4 p-4 rounded-xl bg-surface-soft border border-white/5">
+                <div class="h-8 w-8 rounded-full bg-brand-yellow/10 flex items-center justify-center text-brand-yellow">
+                   <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                </div>
+                <div>
+                  <strong class="block text-white text-sm">Proprietary Chemistry</strong>
+                  <span class="text-xs text-slate-500">Hard-to-replicate neutralisation matrix.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="relative" data-animate="fade-in">
+             <div class="card-premium p-8 bg-gradient-to-br from-surface-soft to-surface-strong">
+                <h3 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-6">Revenue Streams</h3>
+                <div class="space-y-6">
+                   <!-- Stream 1 -->
+                   <div>
+                      <div class="flex justify-between text-sm font-bold text-white mb-2">
+                        <span>Direct-to-Consumer</span>
+                        <span class="text-brand-lime">High Margin</span>
+                      </div>
+                      <div class="w-full bg-white/10 h-2 rounded-full overflow-hidden">
+                        <div class="bg-brand-lime h-full w-[40%]"></div>
+                      </div>
+                      <p class="mt-2 text-[10px] text-slate-500">Web sales & Amazon marketplace bundles.</p>
+                   </div>
+                   <!-- Stream 2 -->
+                   <div>
+                      <div class="flex justify-between text-sm font-bold text-white mb-2">
+                        <span>Retail Distribution</span>
+                        <span class="text-brand-yellow">High Volume</span>
+                      </div>
+                      <div class="w-full bg-white/10 h-2 rounded-full overflow-hidden">
+                        <div class="bg-brand-yellow h-full w-[35%]"></div>
+                      </div>
+                      <p class="mt-2 text-[10px] text-slate-500">POS add-ons at electronics & hardware stores.</p>
+                   </div>
+                   <!-- Stream 3 -->
+                   <div>
+                      <div class="flex justify-between text-sm font-bold text-white mb-2">
+                        <span>B2B / OEM Licensing</span>
+                        <span class="text-blue-400">Scale</span>
+                      </div>
+                      <div class="w-full bg-white/10 h-2 rounded-full overflow-hidden">
+                        <div class="bg-blue-400 h-full w-[25%]"></div>
+                      </div>
+                      <p class="mt-2 text-[10px] text-slate-500">Integration into third-party appliance manufacturing.</p>
+                   </div>
+                </div>
+             </div>
           </div>
         </div>
       </section>
+
+      <!-- CALL TO ACTION -->
+      <section class="section-container pb-24">
+        <div class="rounded-[2.5rem] border border-white/5 bg-surface-soft p-10 md:p-16 text-center">
+           <h2 class="text-2xl font-bold text-white mb-4">Request Our Pitch Deck</h2>
+           <p class="text-slate-400 max-w-lg mx-auto mb-8">
+             We are currently opening conversations for our seed round. Reach out to our founder team for detailed financials and technical roadmap.
+           </p>
+           <div class="flex flex-wrap justify-center gap-4">
+             <a href="/contact" class="btn-primary">Contact Investor Relations</a>
+             <a href="mailto:investors@safebat.com" class="btn-secondary">Email Directly</a>
+           </div>
+        </div>
+      </section>
+
     </main>
 
-    <!-- FOOTER -->
-    <footer class="mt-20 border-top border-white/5 bg-surface-strong">
-      <div
-        class="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-10 md:flex-row md:items-start md:justify-between"
-      >
-        <!-- Brand + summary -->
-        <div class="max-w-sm">
-          <div class="flex items-center gap-2">
-            <div
-              class="flex h-8 w-8 items-center justify-center rounded-2xl bg-batteryYellow text-carbonBlack text-xs font-bold"
-            >
-              SB
+    <!-- FOOTER (Standardized) -->
+    <footer class="border-t border-white/5 bg-surface-strong py-16">
+      <div class="section-container grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+        <div class="col-span-2">
+          <a href="/" class="flex items-center gap-3 mb-6">
+            <div class="h-8 w-8 rounded-xl bg-brand-yellow flex items-center justify-center text-brand-black">
+               <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L3 7v9c0 5 9 6 9 6s9-1 9-6V7l-9-5z"/></svg>
             </div>
-            <span class="text-sm font-semibold">SafeBat</span>
-          </div>
-          <p class="mt-3 text-xs text-slate-400">
-            SafeBat is a battery-safety &amp; sustainability startup that
-            neutralises battery leaks, protects everyday devices and keeps
-            harmful chemicals out of the environment.
+            <span class="text-lg font-bold tracking-tight text-white uppercase">SafeBat</span>
+          </a>
+          <p class="text-xs text-slate-500 max-w-sm leading-relaxed">
+            SafeBat is a battery-safety and sustainability startup. We protect devices, people, and the planet through science-driven chemical neutralisation. Built by engineers, for households.
           </p>
         </div>
+        
+        <div class="space-y-4">
+          <p class="text-xs font-bold text-white uppercase tracking-widest">Product</p>
+          <ul class="space-y-2 text-xs text-slate-500">
+            <li><a href="/solutions" class="hover:text-brand-lime transition-colors">Solutions</a></li>
+            <li><a href="/products" class="hover:text-brand-lime transition-colors">Protector Capsule</a></li>
+            <li><a href="/products#roadmap" class="hover:text-brand-lime transition-colors">Future Sizes</a></li>
+          </ul>
+        </div>
 
-        <!-- Link columns -->
-        <div class="grid gap-8 text-xs text-slate-400 sm:grid-cols-3">
-          <div class="space-y-2">
-            <p class="font-semibold text-slate-200">Product</p>
-            <a href="solutions.html" class="block hover:text-slate-100"
-              >Solutions overview</a
-            >
-            <a href="products.html" class="block hover:text-slate-100"
-              >SafeBat Protector</a
-            >
-            <a href="products.html#usage" class="block hover:text-slate-100"
-              >How it’s used</a
-            >
-            <a href="products.html#roadmap" class="block hover:text-slate-100"
-              >Product roadmap</a
-            >
-          </div>
-
-          <div class="space-y-2">
-            <p class="font-semibold text-slate-200">Company</p>
-            <a href="about.html" class="block hover:text-slate-100"
-              >Mission &amp; story</a
-            >
-            <a href="about.html#founders" class="block hover:text-slate-100"
-              >Founders</a
-            >
-            <a href="contact.html" class="block hover:text-slate-100"
-              >Contact</a
-            >
-            <a
-              href="contact.html#early-access"
-              class="block hover:text-slate-100"
-              >Join the waitlist</a
-            >
-          </div>
-
-          <div class="space-y-2">
-            <p class="font-semibold text-slate-200">Investors</p>
-            <a
-              href="investors.html#opportunity"
-              class="block hover:text-slate-100"
-              >Market &amp; opportunity</a
-            >
-            <a href="investors.html#usp" class="block hover:text-slate-100"
-              >Unique proposition</a
-            >
-            <a href="investors.html#roadmap" class="block hover:text-slate-100"
-              >Roadmap</a
-            >
-            <a
-              href="contact.html#investor-contact"
-              class="block hover:text-slate-100"
-              >Investor contact</a
-            >
-          </div>
+        <div class="space-y-4">
+          <p class="text-xs font-bold text-white uppercase tracking-widest">Inquiries</p>
+          <ul class="space-y-2 text-xs text-slate-500">
+            <li><a href="/investors" class="hover:text-brand-lime transition-colors">Investor Deck</a></li>
+            <li><a href="/contact" class="hover:text-brand-lime transition-colors">Contact Us</a></li>
+            <li><a href="/privacy" class="hover:text-brand-lime transition-colors">Privacy Policy</a></li>
+          </ul>
         </div>
       </div>
 
-      <div
-        class="border-t border-white/5 py-4 text-center text-[11px] text-slate-500"
-      >
-        © <span x-text="new Date().getFullYear()"></span> SafeBat.
-        Science-Driven Battery Safety.
+      <div class="section-container mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-[10px] text-slate-600 uppercase tracking-widest">
+          © <span x-text="new Date().getFullYear()"></span> SafeBat. Science-Driven Battery Safety.
+        </p>
+        <div class="flex gap-6">
+          <span class="text-[10px] text-slate-600 uppercase tracking-widest">Linkedin</span>
+          <span class="text-[10px] text-slate-600 uppercase tracking-widest">X (Twitter)</span>
+        </div>
       </div>
     </footer>
 

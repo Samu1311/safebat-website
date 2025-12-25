@@ -1,4 +1,4 @@
-import "./styles/main.css";
+import "@styles/style.css";
 
 import Alpine from "alpinejs";
 import { initAlpineComponents } from "@scripts/alpine-components";
@@ -10,12 +10,22 @@ declare global {
   }
 }
 
-// Alpine init
-window.Alpine = Alpine;
-initAlpineComponents();
-Alpine.start();
+/**
+ * Standardized App Initialization
+ */
+const initApp = async () => {
+  // 1. Alpine Setup
+  window.Alpine = Alpine;
+  initAlpineComponents();
+  Alpine.start();
 
-// Init scroll animations when DOM is ready
-window.addEventListener("DOMContentLoaded", () => {
-  initScrollAnimations();
-});
+  // 2. Animations Setup
+  // We use DOMContentLoaded to ensure elements are available for GSAP
+  if (document.readyState === "loading") {
+    window.addEventListener("DOMContentLoaded", () => initScrollAnimations());
+  } else {
+    initScrollAnimations();
+  }
+};
+
+initApp().catch(console.error);

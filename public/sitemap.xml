@@ -4,32 +4,32 @@
     xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://your-domain.com/</loc>
+    <loc>https://safebat-website.netlify.app/</loc>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://your-domain.com/solutions.html</loc>
+    <loc>https://safebat-website.netlify.app/solutions.html</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://your-domain.com/products.html</loc>
+    <loc>https://safebat-website.netlify.app/products.html</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://your-domain.com/about.html</loc>
+    <loc>https://safebat-website.netlify.app/about.html</loc>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://your-domain.com/contact.html</loc>
+    <loc>https://safebat-website.netlify.app/contact.html</loc>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://your-domain.com/investors.html</loc>
+    <loc>https://safebat-website.netlify.app/investors.html</loc>
     <priority>0.6</priority>
   </url>
 
