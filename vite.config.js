@@ -10,7 +10,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         solutions: resolve(__dirname, "solutions.html"),
-        products: resolve(__dirname, "technology.html"),
+        technology: resolve(__dirname, "technology.html"),
         about: resolve(__dirname, "about.html"),
         contact: resolve(__dirname, "contact.html"),
         investors: resolve(__dirname, "investors.html")
